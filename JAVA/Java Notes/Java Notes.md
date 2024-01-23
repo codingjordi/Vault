@@ -33,3 +33,16 @@ Steps for the same are given below:
 2. Run all the tests and see if any new test fails.
 3. Update the code to make it pass the new tests.
 4. Rerun the test and if they fail, then debug the code again and fix any related error. Rinse and repeat.
+
+## Naming the test class
+
+We use common conventions in naming the test class. Let’s start with 
+the name of the class which is being tested and assume the name of that 
+class is `Student`. In that case, the name of the test class should be `StudentTest`. We have to append `Test` to it. The same naming convention is used in the case of methods. If there is a method `DisplayStudentAddress()`, then the name of the method in testing should be `testDisplayStudentAddress()`.
+
+
+
+| Naming in Production    | Naming in Testing           |
+| ----------------------- | --------------------------- |
+| Student                 | StudentTest                 |
+| DisplayStudentAddress() | testDisplayStudentAddress() |
