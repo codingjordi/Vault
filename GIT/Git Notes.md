@@ -1,1 +1,0 @@
-![](https://lh7-us.googleusercontent.com/ksOTOjs-OYHDF_ihI2CAd4T5N66roJZT-5Y1BWK2aX28rZIiaJq_83vlepeXuCkCDVntF45NpkpJlzFbJCmMb4MaWVJnEK7xNYoCSvYX0T2ziMljURa6g8l_p0FlUwrlk2DhFekEghi5r69nyjzKLV0)
