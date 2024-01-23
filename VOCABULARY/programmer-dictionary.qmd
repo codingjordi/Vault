@@ -1,0 +1,637 @@
+---
+title: "The Programmer Dictionary"
+---
+
+## A
+
+
+### Algoexpert
+: definition
+
+---
+
+### Arquitechture
+: defintion
+
+---
+
+### Abstraction
+: definition
+
+---
+
+### apt
+: definition
+
+---
+
+
+### API Rest
+: definition
+
+---
+
+### Agile
+: definition
+
+---
+
+### AWS
+: definition
+
+---
+
+## B
+
+### Bash (.sh)
+: definition
+
+---
+
+## C
+
+
+### CI/CD
+: definition
+
+---
+
+### Client
+: defintion
+
+---
+
+### Cloud
+: definition
+
+---
+
+### Controller
+: definition
+
+---
+
+### Component (*React*)
+: defintion
+
+---
+
+### curl (*Linux*)
+: definition
+
+---
+
+### Cron Job
+: definition
+
+---
+
+### CSS (Cascade Style Sheet)
+: definition
+
+---
+
+## D
+
+
+### Data Warehouse
+: definition
+
+---
+
+### DB (Data Base)
+: defintion
+
+---
+
+### DDD (Domain-Driven Design)
+: definition
+
+---
+
+### (to) deploy
+: definition
+
+---
+
+### Dependency
+: definition
+
+---
+
+### Docker
+: definition
+
+---
+
+### Domain (*Architecture*)
+: definition
+
+---
+
+
+## E
+
+
+### Eclipse
+: definition
+
+---
+
+### ES6 (ECMAScript 2015)
+: defintion
+
+---
+
+### Express
+: definition
+
+---
+
+## F
+
+
+### FATO
+: definition
+
+---
+
+### Flameshot
+: definition
+
+---
+
+### (*to*) fork
+: definition
+
+---
+
+### Fresh (*instantánea*)
+: definition
+
+---
+
+
+## G
+
+---
+
+### Git
+: definition
+
+---
+
+### GitHub
+: definition
+
+---
+
+### gh-pages
+: definition
+
+---
+
+### Goa
+: definition
+
+---
+
+### gParted
+: definition
+
+---
+
+### GraphQL
+: definition
+
+---
+
+
+## H
+
+### Hashmap
+: definition
+
+---
+
+### Helper
+: defintion
+
+---
+
+### Hook (*React*)
+: definition
+
+---
+
+### Htop
+: definition
+
+---
+
+### HTML (Hyper Text Markup Language)
+: definition
+
+---
+
+### HTTPS (Hypertext Transfer Protocol Secure)
+: definition
+
+---
+
+## I
+
+### IntelliJ IDEA
+: definition
+
+---
+
+### Inmutability
+: definition
+
+---
+
+### Instance Variable
+: definition
+
+---
+
+
+## J
+
+---
+
+### JIT
+: definition
+
+---
+
+### JNI
+: definition
+
+---
+
+### .jsx
+: definition
+
+---
+
+### .json (JavaScript Object Notation)
+: definition
+
+---
+
+### Java
+: definition
+
+---
+
+### Java EE
+: definition
+
+---
+
+### Java Fx
+: definition
+
+---
+
+### Java SE
+: definition
+
+---
+
+### JavaScript
+: definition
+
+---
+
+### JDA
+: definition
+
+---
+
+### JCL
+: definition
+
+---
+
+
+## K
+
+## L
+
+### Linux
+: definition
+
+---
+
+
+## M
+
+---
+
+### Mindset
+: definition
+
+---
+
+### Markdown (.md)
+: hola que ase
+
+---
+
+### Maven
+: definition
+
+---
+
+### mutability
+: definition
+
+---
+
+### MVC (Model View Controller)
+: definition
+
+---
+
+## N
+
+---
+
+### Next.js
+: definition
+
+---
+
+### Node
+: definition
+
+---
+
+### Node.js
+: definition
+
+---
+
+### NoSQL
+: definition
+
+---
+
+### npm
+: definition
+
+---
+
+### npx
+: definition
+
+---
+
+### nvm
+: definition
+
+---
+
+## O
+
+---
+
+### Obsidian
+: definition
+
+---
+
+## P
+
+---
+
+### Polimorfism
+
+---
+
+### Product Backlog
+: definition
+
+---
+
+## Q
+
+---
+
+### Qbernet
+: definition
+
+---
+
+### Quarkus
+: definition
+
+---
+
+### Quarto
+: definition
+
+---
+
+
+## R
+
+---
+
+### rafce
+: defintion
+
+---
+
+### React
+: definition
+
+---
+
+### (to) render
+: definition
+
+---
+
+## S
+
+---
+
+### S3
+: definition
+
+---
+
+### Sandbox
+: definition
+
+---
+
+### Script
+: definition
+
+---
+
+### SDK (Software Development Kit)
+: definition
+
+---
+
+### SpringBoot
+: definition
+
+---
+
+### SQL
+: definition
+
+---
+
+### sudo
+: definition
+
+--- 
+
+### Server
+: definition
+
+---
+
+### SCRUM
+: definition
+
+---
+
+### Synaptic
+: definition
+
+---
+
+### System Design
+: definition
+
+---
+
+### Synaptyc Software Manager
+: definition
+
+---
+
+### System Monitor
+: definition
+
+---
+
+### System Report
+: definition
+
+---
+
+### Software sources
+: definition
+
+---
+
+### Sublime
+: definition
+
+---
+
+### snap
+: definition
+
+---
+
+
+## T
+
+---
+
+### Timeshift
+: definition
+
+---
+
+### ThymeLeaf
+: definition
+
+---
+
+### TMC Beans
+: definition
+
+---
+
+
+## U
+
+---
+
+### Ubuntu
+: definition
+
+---
+
+
+### UML
+: definition
+
+---
+
+
+## V
+
+---
+
+### Vite
+: defintion
+
+---
+
+### VSC (Visual Studio Code)
+: definition
+
+---
+
+
+### VM
+: defintion
+
+---
+
+
+## W
+
+---
+
+### Websocket
+: definition
+
+---
+
+### wizzard
+: defintion
+
+---
+
+## X
+
+---
+
+### XML (eXtensible Markup Language)
+: defintion
+
+---
+
+## Y
+
+### .yml
+: definition
+
+---
+
+
+## Z
