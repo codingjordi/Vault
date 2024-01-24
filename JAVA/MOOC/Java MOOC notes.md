@@ -1,4 +1,10 @@
-JAVA MOOC - Java Part I
+# JAVA MOOC - Java Programming Part I
+
+
+
+# Part 4
+
+## Introduction to object-oriented programming
 
 - Adding to a list is done with the method add that receives the value to be added as a parameter.
 
@@ -1440,7 +1446,7 @@ Problemas de lectura/escritura: Si hay errores durante la lectura del archivo, c
 
 El manejo de excepciones permite que tu programa reaccione adecuadamente a estas situaciones, ya sea mostrando un mensaje de error, realizando acciones específicas de recuperación o simplemente finalizando el programa de manera controlada. Esto mejora la robustez y la capacidad de respuesta de tu aplicación frente a situaciones imprevistas.
 
-Exercise Part 4 -PrintingASpecifiedFile
+***Exercise Part 4 - PrintingASpecifiedFile***
 
 ![](https://lh7-us.googleusercontent.com/sJNbfhtO88t3irdUen3hCYGUVRwwN7dfvY0NOARSdynrPemdftYCyWnXeRSgfkbq2mRIe1qdR_NsnMotPJHVwF4pDXvF-xYtjwIA-aVovd_kh6vN7h5EUkXjo2PLoZgOkI8VqlYiybbNo5Lf613nq_c)
 
@@ -1470,15 +1476,15 @@ try (Scanner scanner = new Scanner(Paths.get("file.txt"))) {
 
 System.out.println("Total lines: " + lines.size());
 
-Ejercicio IsItInTheFile Part 4
+***Ejercicio IsItInTheFile Part 4***
 
 ![](https://lh7-us.googleusercontent.com/UEyL6GdBbBmKXjAz9qOT7u6of6WOcY6Ovv0tmtv6YP8OLXIrV9Ta0xPvxWPP1HWjsoz2vMIJBKNioyeQQIEZRWNaGSvvnuxqv-nWDU4yL_yI1ncMzwrdxfrjYfBh4jmJ7nMzK9ruye6txNFRrFmoEdw)
 
-Ejercicio NumbersFromAFile - Part 4 
+***Ejercicio NumbersFromAFile - Part 4*** 
 
 ![](https://lh7-us.googleusercontent.com/plkB25xcyZQ0KDoyZUhs2ng7sT2QoNVqgWGne7GI6mIBlTEYbYWnQ2CcSYNjXNLjs1LwSESnpPxwiIOuqyli4FoRdFeVNxtdpO3YWb4MQprNeHjXBBZ5MT9H8fFFZm1nMvXgxu267Tf24hYdXTdGCqE)
 
-Ejercici Storing Records - Part 4
+***Ejercici Storing Records - Part 4***
 
 ![](https://lh7-us.googleusercontent.com/y9O7eQhJGz0Zm9AR2GujhoPtMJz2-PdleRbW6uA66GRvLcr8iIB5RcloPrnu0QfU43SN1WmLwaLQxEF9w1KP3DZrZDn8kDWoZtQdtd9hOq7jfSMC_QryNRs9-n3xIMCpIe92EBPtHEAjkPjyHHkWd5M)
 
@@ -1511,6 +1517,234 @@ try (Scanner scanner = new Scanner(Paths.get("records.txt"))) {
 System.out.println("Total amount of people read: " + people.size());
 
 Reading objects from a file is a clear responsibility in and of itself, and should for that reason be isolated into a method.
+
+---
+
+---
+
+
+
+# Part 5
+
+# Learning object-oriented programming
+
+So, what's object-oriented programming all about?
+
+Let's step back for a moment and inspect how a clock works. The clock has three hands: hours, minutes and seconds. The second-hand grows once every  second, the minute hand every sixty seconds, and the hour hand every  sixty minutes. When the value of the second hand is 60, its value is set to zero, and the value of the minute hand grows by one. When the minute hand's value is 60, its value is set to zero, and the hour hand's value grows by one. When the hour hand's value is 24, it's set to zero.
+
+
+
+The time is always printed in the form `hours: minutes: seconds`, where two digits are used to represent the hour *<u>(e.g., 01 or 12)</u>* as well as the minutes and seconds.
+
+ 
+
+The clock has been implemented below using integer variables (the printing 
+could be in a separate method, but that has not been done here).
+
+
+
+```java
+int hours = 0;
+int minutes = 0;
+int seconds = 0;
+
+while (true) {
+    // 1. Printing the time
+    if (hours < 10) {
+        System.out.print("0");
+    }
+    System.out.print(hours);
+
+    System.out.print(":");
+
+    if (minutes < 10) {
+        System.out.print("0");
+    }
+    System.out.print(minutes);
+
+    System.out.print(":");
+
+    if (seconds < 10) {
+        System.out.print("0");
+    }
+    System.out.print(seconds);
+    System.out.println();
+
+    // 2. The second hand's progress
+    seconds = seconds + 1;
+
+    // 3. The other hand's progress when necessary
+    if (seconds > 59) {
+        minutes = minutes + 1;
+        seconds = 0;
+
+        if (minutes > 59) {
+            hours = hours + 1;
+            minutes = 0;
+
+            if (hours > 23) {
+                hours = 0;
+            }
+        }
+    }
+}
+```
+
+<mark>Our aim is to make the program more understandable.</mark>
+
+Since a clock hand is a clear concept in its own right, a good way to improve 
+the program's clarity would be to turn it into a class. Let's create a `ClockHand` class that describes a clock hand, which contains information about its value, upper limit *(i.e., the point at which the value of the hand returns to zero)*, and provides methods for advancing the hand, viewing  its value, and also printing the value in string form.
+
+```java
+public class ClockHand {
+    private int value;
+    private int limit;
+
+    public ClockHand(int limit) {
+        this.limit = limit;
+        this.value = 0;
+    }
+
+    public void advance() {
+        this.value = this.value + 1;
+
+        if (this.value >= this.limit) {
+            this.value = 0;
+        }
+    }
+
+    public int value() {
+        return this.value;
+    }
+
+    public String toString() {
+        if (this.value < 10) {
+            return "0" + this.value;
+        }
+
+        return "" + this.value;
+    }
+}
+```
+
+Once we've created the ClockHand class, our clock has become clearer. 
+It's now straightforward to print the clock, i.e., the clock hand, and  the hand's progression is hidden away in the ClockHand class. Since the  the hand returns to the beginning automatically with the help of the upper-limit variable defined by the ClockHand class, the way the hands work together is slightly different than in the implementation that used integers. That one looked at whether the value of the integer that represented the clock hand exceeded the upper limit, after which its value was set to zero and the value of the integer representing the next clock hand was incremented. Using clock-hand objects, the minute hand advances when the second hand's value is zero, and the hour hand advances when the minute hand's value is zero.
+
+
+
+```java
+ClockHand hours = new ClockHand(24);
+ClockHand minutes = new ClockHand(60);
+ClockHand seconds = new ClockHand(60);
+
+while (true) {
+    // 1. Printing the time
+    System.out.println(hours + ":" + minutes + ":" + seconds);
+
+    // 2. Advancing the second hand
+    seconds.advance();
+
+    // 3. Advancing the other hands when required
+    if (seconds.value() == 0) {
+        minutes.advance();
+
+        if (minutes.value() == 0) {
+            hours.advance();
+        }
+    }
+}
+```
+
+**Object-oriented programming is primarily about isolating 
+concepts into their own entities or, in other words, creating 
+abstractions**. Despite the previous example, one might deem it 
+pointless to create an object containing only a number since the same 
+could be done directly with `int` variables. However, that is not always the case.
+
+Separating a concept into its own class is a good idea for many reasons. Firstly, certain details (such as the rotation of a hand) can be hidden inside the class (i.e., **abstracted**). Instead of typing an if-statement and an assignment operation, it's enough for the one using the clock hand to call a clearly-named method `advance()`. The resulting clock hand may be used as a building block for other programs as well - the class could be named `CounterLimitedFromTop`, for instance. That is, a class created from a distinct concept can serve multiple purposes. Another massive advantage is that since the   details of the implementation of the clock hand are not visible to its user, they can be changed if desired.
+
+We realized that the clock contains three hands, i.e., it consists of three concepts. The clock is a concept in and of itself. As such, we can create a class for it too. Next, we create a class called "Clock" that hides the hands inside of it.
+
+
+
+```java
+public class Clock {
+    private ClockHand hours;
+    private ClockHand minutes;
+    private ClockHand seconds;
+
+    public Clock() {
+        this.hours = new ClockHand(24);
+        this.minutes = new ClockHand(60);
+        this.seconds = new ClockHand(60);
+    }
+
+    public void advance() {
+        this.seconds.advance();
+
+        if (this.seconds.value() == 0) {
+            this.minutes.advance();
+
+            if (this.minutes.value() == 0) {
+                this.hours.advance();
+            }
+        }
+    }
+
+    public String toString() {
+        return hours + ":" + minutes + ":" + seconds;
+    }
+}
+```
+
+The way the program functions has become increasingly clearer. When you 
+compare our program below to the original one that was made up of 
+integers, you'll find that the program's readability is superior.
+
+```java
+Clock clock = new Clock();
+
+while (true) {
+    System.out.println(clock);
+    clock.advance();
+}
+```
+
+The clock we implemented above is an object whose functionality is based on "simpler" objects, i.e., its hands. This is precisely the **great idea behind ​​object-oriented programming: a program is built from small and distinct objects that work together**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 VOCABULARIO
 

@@ -12,19 +12,13 @@
 
 ---
 
-
-
 ## Java SE: JUnit and TDD
 
 ### :book:  JUnit
 
 **JUnit is a unit testing framework for the Java programming language**. It is used to write and run repeatable tests for Java code. JUnit provides a set of **annotations** and **assertions** that make it easy to write and run tests, as well as a simple framework for organizing and running tests.
 
-
-
 Unit tests are the smallest elements in the test automation process. With the help of unit tests, the developer can check the business logic of any class
-
-
 
 **Annotations** are metadata that can be added to source code to provide additional information to the compiler or runtime environment. In the context of JUnit, annotations are used to mark methods as test methods and to perform specific configurations.
 
@@ -49,8 +43,6 @@ public class MyClassTest {
     }
 }
 ```
-
-
 
 **Assertions** are boolean expressions used to check whether a condition is true or false. In JUnit, assertions are used to verify the expected result of a test method. If an assertion fails, the test is considered unsuccessful.
 
@@ -93,8 +85,6 @@ code to implement the feature, and then running the test again to ensure
  that it passes. This process is then repeated for each feature until 
 the code is complete. <mark>However, it doesn't replace traditional testing</mark>.
 
-
-
 TDD is often used in **agile software development**, as it allows for the rapid development of **high-quality code***.
 
 Steps for the same are given below:
@@ -114,8 +104,6 @@ class is `Student`. In that case, the name of the test class should be `StudentT
 | ----------------------- | --------------------------- |
 | Student                 | StudentTest                 |
 | DisplayStudentAddress() | testDisplayStudentAddress() |
-
-
 
 ---
 
