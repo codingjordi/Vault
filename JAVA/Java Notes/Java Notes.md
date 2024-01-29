@@ -1,14 +1,106 @@
-# Apuntes Java
+# <u>Apuntes Java</u>
 
-## Como crear un proyecto SE con IntellJ IDEA:
+<img title="" src="file:///home/jordi/MyProjects/JAVA/Java%20Notes/img/classMain.png" alt="" data-align="center" width="471">
 
-1. New Project
+---
 
-2. Archetype: Maven Archetype
+## Java SE: Class and Objects
 
-3. Seleccionamos el JDK (Oracle Open JDK 21.0.1)
+### :book: What is a Java Class
 
+A Java class is a **template for creating objects, defining object data types and methods**. A class is a blueprint for objects, and an object is an <span style="background-color: khaki">instance</span> of a class.
 
+In other words, a class defines the properties and behaviors that objects created from the class will have.
+
+### :book: What is a Java Object
+
+An object in Java is a **container that holds both data and behavior**. The data is represented bt rhe object's attributes, and the behavior is represented by the methods that operate on those attributes.
+
+When you create an object, you are creating an **instance of a class**, which is a blueprint or template for the object.
+
+Each object has its own unique identity, and it maintains its own state by storing the values a of its attributes.
+
+<img title="" src="file:///home/jordi/MyProjects/JAVA/Java%20Notes/img/personClassDefn.png" alt="" width="442" data-align="center">
+
+### Creating Objects
+
+As you know, a class provides the blueprint for objects; you create an object from a class. Each of the following statements taken from the [`CreateObjectDemo`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/CreateObjectDemo.java) program creates an object and assigns it to a variable:
+
+```java
+Point originOne = new Point(23, 94);
+Rectangle rectOne = new Rectangle(originOne, 100, 200);
+Rectangle rectTwo = new Rectangle(50, 100);
+```
+
+The first line creates an object of the `Point` class, and the second and third lines each create an object of the `Rectangle` class.
+
+Each of these statements has three parts (discussed in detail below):
+
+- **Declaration**: The code set in bold are all variable declarations that associate a variable name with an object type.
+- **Instantiation**: The new keyword is a Java operator that creates the object.
+- **Initialization**: The new operator is followed by a call to a constructor, which initializes the new object.
+
+##### 📘 Instantiating a Class
+
+The `new` **operator instantiates a class by allocating memory for a new object and returning a reference to that memory**. The new operator also invokes the object construct
+
+### Casting (typecasting)
+
+`Casting`**is the process of converting one type of data to another type.** There are two types of casting: **explicit** and **implicit**.
+
+#### Excplicit casting
+
+**Explicity casting** is when you specify the type you want the data to be converted to. An example of explicit casting is:
+
+```java
+int x = (int) 3.14;
+```
+
+In this case, the double value of `3.14` is being explicitly cast to an int.
+
+#### Implicit casting
+
+**Implicit casting**, also known as **widening**, is when the conversion happens automatically without the need for a specific type to be specified. An example of implicit casting is:
+
+```java
+double x = 3;
+```
+
+**It’s important to note that casting can cause data loss if the type being converted to cannot hold the value of the original type.**
+
+For example, casting a large `double` value to an int would result in the decimal places being truncated and lost.
+
+In this case, the `int` value of `3` is being implicitly cast to a double.
+
+---
+
+---
+
+### Java SE: Scope
+
+There are *three main types of scope* in Java:
+
+- **Class scope**: A variable that is declared within a class, but outside of any method, has class scope, which means that it can be accessed and used by any method within the class.
+
+- **Method scope**: A variable that is declared within a method has method scope, which means that it can only be accessed and used within that method.
+
+- **Local scope**: A variable that is declared within a block of code, such as within a loop or an if statement, has local scope, which means that it can only be accessed and used within that block of code.
+
+<img title="" src="file:///home/jordi/MyProjects/JAVA/Java%20Notes/img/scopeDiagram.png" alt="" width="426" data-align="center">
+
+---
+
+---
+
+## Java SE: static modifier
+
+### :book: static modifier
+
+In Java, the `static` modifier is used to indicate that a **class or ckass nenver belongs to the class itself, rather than an instance of the class**.
+
+In other words, the `static` modifier indicates that the class or class member is associated with the class as a whole, rather than with a specific instance of the class.
+
+---
 
 ---
 
@@ -22,29 +114,19 @@ Based on the concept of a project object model **(POM)**, Maven is a **build aut
 
 These tools allow developers to specify the dependencies for their project in a file, and then automatically handle the process of downloading and installing those dependencies. This can save a lot of time and effort for developers, and helps to ensure that all of the necessary dependencies are present and up-to-date in a project.
 
-
-
 #### Maven Central Repository
 
 Maven repository is a directory where all the dependencies such as jars, library files, plugins - *or other artifacts that will be required by the projects* -, are stored.
 
 These repositories help us to store and maintain useful resources so that they can be used in our Maven projects while building and deploying artifacts.
 
-
-
 #### Maven Lifecycle
 
 Maven is a **build automatation tool for Java projects**. It is used to manage the build, reporting and documentation of a project. Maven has a defined lifecycle that outlines the steps required to build and distribute a project.
 
-
-
-![Maven lifecycle](/home/jordi/MyProjects/JAVA/Java%20Notes/img/maven-lifecycle.png)
-
-
+<img src="file:///home/jordi/MyProjects/JAVA/Java%20Notes/img/maven-lifecycle.png" title="" alt="Maven lifecycle" data-align="center">
 
 The **Maven lifecycle** has three main phases:
-
-
 
 1. `default`: This is the **main phase** of the lifecycle, where the project is **<u>built</u>**, **<u>tested</u>**, and <u>**packaged**</u>.
 
@@ -52,11 +134,7 @@ The **Maven lifecycle** has three main phases:
 
 3. `site`: This phase is used to generate the project's documentation and site information.
 
-
-
 Each phase of the **Maven lifecycle** consists of a <u>set of build phase</u>s, which are executed in a specific order.
-
-
 
 For example, the `default phase` consists of the following `build phases`:
 
@@ -72,17 +150,11 @@ For example, the `default phase` consists of the following `build phases`:
 
 6. `deploy`: Deploy the packaged code to a remote repository for others to use.
 
-
-
 By following the **defined Maven lifecycle**, developers can **easily build, test and distribute their Java projects ina  consistent and repeatable manner**
-
-
 
 ### Maven dependencies, plug-in & library
 
 In **Maven** projects, the terms *plug-in*, *dependency* and *library* refer to different concepts related to **project configuration, build processes and external dependencies.**
-
-
 
 ***Plug-in***
 
@@ -148,10 +220,6 @@ In **Maven** projects, the terms *plug-in*, *dependency* and *library* refer to 
     </dependency>
 </dependencies>
 ```
-
-
-
-
 
 ---
 
@@ -228,7 +296,7 @@ meets the requirements and works as intended. TDD involves writing a
 test for a feature, running the test to see if it fails, writing the 
 code to implement the feature, and then running the test again to ensure
  that it passes. This process is then repeated for each feature until 
-the code is complete. <mark>However, it doesn't replace traditional testing</mark>.
+the code is complete. <span style="background-color: khaki">However, it doesn't replace traditional testing</mark>.
 
 TDD is often used in **agile software development**, as it allows for the rapid development of **high-quality code***.
 
@@ -253,3 +321,11 @@ class is `Student`. In that case, the name of the test class should be `StudentT
 ---
 
 ---
+
+## Como crear un proyecto SE con IntellJ IDEA:
+
+1. New Project
+
+2. Archetype: Maven Archetype
+
+3. Seleccionamos el JDK (Oracle Open JDK 21.0.1) 
