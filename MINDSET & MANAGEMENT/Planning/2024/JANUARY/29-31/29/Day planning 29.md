@@ -4,17 +4,25 @@
 
 ## Homework :pencil:
 
-- [ ] **Java Create Project** (rellegir *Maven*, *Create Maven Project*, *Project push GitHub*, *JUnit and TDD*)
-- [ ] **Java SE: Class and Objects**
-- [ ] **Java SE: Scope**
-- [ ] **Java SE: static modifier**
-- [ ] **Java SE: Coupling and DDD** (*no obligatori*)
-- [ ] **Java SE Lab#SE04-01** (revisar el que hem fet i fer replica del que hem fet till now)
+- [x] **Java Create Project** (rellegir *Maven*, *Create Maven Project*, *Project push GitHub*)
 
-- [ ] **React: Describing the UI**
-- [ ] **Create-react-project** React Lab#06-01
-- [ ] **ReactJS 18: Rules of Hooks** *(albertprofe.dev)*
-- [ ] **ReactJS 18: useState** *(albertprofe.dev)*
+- [ ] ~~**Reread Java SE: JUnit and TDD**~~
+
+- [x] **Java SE: Class and Objects**
+
+- [x] **Java SE: Scope**
+
+- [x] **Java SE: static modifier**
+
+- [ ] ~~**Java SE Lab#SE04-01** (revisar el que hem fet i fer replica del que hem fet till now)~~
+
+- [ ] **~~React: Describing the UI~~**
+
+- [ ] ~~**Create-react-project** React Lab#06-01~~
+
+- [ ] ~~**ReactJS 18: Rules of Hooks** *(albertprofe.dev)~~*
+
+- [ ] ~~**ReactJS 18: useState** *(albertprofe.dev)*~~
 
 ## Others :bulb:
 
@@ -25,10 +33,10 @@
 + [ ] **The Programmer Dictionary** (revisar llibreta i afegir algun concepte mes i alguna definicio)
 - [ ] **Tutorial Git**
 
-- [ ] **Take notes**
+- [x] **Take notes**
 
 - [ ] **Sprint Backlog: 31/01/2024** (*preparar la classe de React*)
 
-- [ ] **<u>Backlog 29/01/2024</u>**
+- [x] **<u>Backlog 29/01/2024</u>**
 
-- [ ] **Modify plan if needed :smile:**
+- [x] **Modify plan if needed :smile:**
