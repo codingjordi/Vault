@@ -1,7 +1,5 @@
 # JAVA MOOC - Java Programming Part I
 
-
-
 # Part 4
 
 ## Introduction to object-oriented programming
@@ -1522,17 +1520,13 @@ Reading objects from a file is a clear responsibility in and of itself, and shou
 
 ---
 
+# <u>Part 5</u>
 
-
-# Part 5
-
-# Learning object-oriented programming
+## 1. Learning object-oriented programming
 
 So, what's object-oriented programming all about?
 
 Let's step back for a moment and inspect how a clock works. The clock has three hands: hours, minutes and seconds. The second-hand grows once every  second, the minute hand every sixty seconds, and the hour hand every  sixty minutes. When the value of the second hand is 60, its value is set to zero, and the value of the minute hand grows by one. When the minute hand's value is 60, its value is set to zero, and the hour hand's value grows by one. When the hour hand's value is 24, it's set to zero.
-
-
 
 The time is always printed in the form `hours: minutes: seconds`, where two digits are used to represent the hour *<u>(e.g., 01 or 12)</u>* as well as the minutes and seconds.
 
@@ -1540,8 +1534,6 @@ The time is always printed in the form `hours: minutes: seconds`, where two digi
 
 The clock has been implemented below using integer variables (the printing 
 could be in a separate method, but that has not been done here).
-
-
 
 ```java
 int hours = 0;
@@ -1630,8 +1622,6 @@ public class ClockHand {
 Once we've created the ClockHand class, our clock has become clearer. 
 It's now straightforward to print the clock, i.e., the clock hand, and  the hand's progression is hidden away in the ClockHand class. Since the  the hand returns to the beginning automatically with the help of the upper-limit variable defined by the ClockHand class, the way the hands work together is slightly different than in the implementation that used integers. That one looked at whether the value of the integer that represented the clock hand exceeded the upper limit, after which its value was set to zero and the value of the integer representing the next clock hand was incremented. Using clock-hand objects, the minute hand advances when the second hand's value is zero, and the hour hand advances when the minute hand's value is zero.
 
-
-
 ```java
 ClockHand hours = new ClockHand(24);
 ClockHand minutes = new ClockHand(60);
@@ -1664,8 +1654,6 @@ could be done directly with `int` variables. However, that is not always the cas
 Separating a concept into its own class is a good idea for many reasons. Firstly, certain details (such as the rotation of a hand) can be hidden inside the class (i.e., **abstracted**). Instead of typing an if-statement and an assignment operation, it's enough for the one using the clock hand to call a clearly-named method `advance()`. The resulting clock hand may be used as a building block for other programs as well - the class could be named `CounterLimitedFromTop`, for instance. That is, a class created from a distinct concept can serve multiple purposes. Another massive advantage is that since the   details of the implementation of the clock hand are not visible to its user, they can be changed if desired.
 
 We realized that the clock contains three hands, i.e., it consists of three concepts. The clock is a concept in and of itself. As such, we can create a class for it too. Next, we create a class called "Clock" that hides the hands inside of it.
-
-
 
 ```java
 public class Clock {
@@ -1714,35 +1702,105 @@ The clock we implemented above is an object whose functionality is based on "sim
 
 
 
+## Object
+
+An **Object** refers to an independent entity that contains both data (instance variables) and behavior (methods). Objects may come in lots of different forms: some may describe problem-domain concepts, others are used to coordinate the interaction that happens between objects. Objects interact with one another through method calls — these method calls are used to both request information from objects and give instructions to them.
+
+Generally, each object has clearly defined boundaries and behaviors and is only aware of the objects that it needs to perform its task. In other words, the object hides its internal operations, providing access to its functionality through clearly defined methods. Moreover, the object is independent of any other object that it doesn't require to accomplish its task.
+
+In the previous section, we dealt with objects that represented people whose structure was defined in a "Person" class. It's a good idea to remind ourselves of what a class does: a **class** contains the blueprint needed to create objects, and also defines the objects' variables and methods. An object is created on the basis of the class constructor.
+
+Our person objects had a name, age, weight and height property, along with a few methods. If we were to think about the structure of our person object some more, we could surely come up with more variables related to a person, such as a personal ID number, telephone number, address and eye color.
+
+In reality, we can relate all kinds of different information and things to a person. However, when building an application that deals with people, the **functionality and features related to a person are gathered based on the application's use case**. For example, an application focused on personal health and well-being would probably keep track of the variables mentioned earlier, such as age, weight, and height, and also provide the ability to calculate a body mass index and a maximum heart rate. On the other hand, an application focused on communication could store people's email addresses and phone numbers, but would have no need for information such as weight or height.
+
+**The state of an object** is the value of its internal variables at any given point in time.
+
+In the Java programming language, a Person object that keeps track of name, age, weight, and height, and provides the ability to calculate body mass index and maximum heart rate would look like the following. Below, the height and weight are expressed as doubles - the unit of length is one meter.
+
+```java
+public class Person {
+    private String name;
+    private int age;
+    private double weight;
+    private double height;
+
+    public Person(String name, int age, double weight, double height) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
+    }
+
+    public double bodyMassIndex() {
+        return this.weight / (this.height * this.height);
+    }
+
+    public double maximumHeartRate() {
+        return 206.3 - (0.711 * this.age);
+    }
+
+    public String toString() {
+        return this.name + ", BMI: " + this.bodyMassIndex()
+            + ", maximum heart rate: " + this.maximumHeartRate();
+    }
+}
+```
 
 
 
+## Class
+
+A class defines the types of objects that can be created from it. It contains **instance variables** describing the object's data, a **constructor** or constructors used to create it, and **methods** that define its behavior. A rectangle class is detailed below which defines the functionality of a rectangle.
+
+```java
+// class
+public class Rectangle {
+
+    // instance variables
+    private int width;
+    private int height;
+
+    // constructor
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // methods
+    public void widen() {
+        this.width = this.width + 1;
+    }
+
+    public void narrow() {
+        if (this.width > 0) {
+            this.width = this.width - 1;
+        }
+    }
+
+    public int surfaceArea() {
+        return this.width * this.height;
+    }
+
+    public String toString() {
+        return "(" + this.width + ", " + this.height + ")";
+    }
+}
+```
 
 
 
+Some of the methods defined above do not return a value (methods that have the keyword `void` in their definition), while others do (methods that specify the type of variable to be returned). The class above also defines the `toString` method, which returns the string used to print the object.
+
+Objects are created from the class through constructors by using the `new` command. Below, we'll create two rectangles and print information related to them.
+
+## Removing repetitive code (overloading methods and constructors)
 
 
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
 
 
 
