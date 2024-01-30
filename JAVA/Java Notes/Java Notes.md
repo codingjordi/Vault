@@ -100,6 +100,24 @@ In Java, the `static` modifier is used to indicate that a **class or ckass nenve
 
 In other words, the `static` modifier indicates that the class or class member is associated with the class as a whole, rather than with a specific instance of the class.
 
+#### :bulb:`static` vs. `non-static`
+
+##### Pros & cons usage `static` methods
+
+| Pros of making a method static                                                        | Cons of making a method static                                                                           |
+| ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Can be called directly on the class, without needing to create an instance (*object*) | Cannot acces `non-static` fields and methods of the class                                                |
+| Can be used as utility methods that don't depend on the state of an object            | Can only work with the parameters passed to it and not use information unique to each object or instance |
+| Can be used to access only static variables and methods, making it more efficient     | no entenc                                                                                                |
+
+##### Pros & cons usage `non-static` methods
+
+| Pros of making a method non-static                                                                                                              | Cons of making a method non-static                                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Can access both static and non-static fields and methods of the class, allowing it to use the satate of an object to determine its behavior     | Can only be called on an instance of the class, so you need to create an object of a class before using the method                                |
+| Are associated with an instance of the class, so they can use the information that is unique to each object                                     | Can cause confusion when working with non-static methods because it could be called on different instances, which could cause unexpected behavior |
+| Object-oriented design principles promote the use of `non-static` methods because they can be overridden by subclasses to change their behavior |                                                                                                                                                   |
+
 ---
 
 ---
