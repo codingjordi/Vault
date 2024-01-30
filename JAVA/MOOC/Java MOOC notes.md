@@ -6,65 +6,64 @@
 
 - Adding to a list is done with the method add that receives the value to be added as a parameter.
 
+```java
 ArrayList<String> list = new ArrayList<>();
-
 list.add("hello world!");
+```
 
 - The number of elements in a list can be discovered with the non-parameterized method size; it returns an integer.
 
+```java
 ArrayList<String> list = new ArrayList<>();
-
 int size = list.size();
-
 System.out.println(size);
+```
 
 - You can retrieve a value from a certain index with the method get that is given the index at which the value resides as a parameter.
 
+```java
 ArrayList<String> list = new ArrayList<>();
-
 list.add("hello world!");
-
 String string = list.get(0);
-
 System.out.println(string);
+```
 
 - Removing elements from a list is done with the help of remove. It receives as a parameter either the value that is to be removed, or the index of the value to be removed.
 
+```java
 ArrayList<String> list = new ArrayList<>();
-
 // remove the string "hello world!"
-
 list.remove("hello world!");
-
- // remove the value at index 3
-
+// remove the value at index 3
 list.remove(3);
+```
 
 - Checking for the existence of a value is done with the method contains. It's provided the value being searched for as a parameter, and it returns a boolean value.
 
+```java
 ArrayList<String> list = new ArrayList<>();
-
 boolean found = list.contains("hello world!");
+```
 
 ## Creating an Array
 
 There are two ways to create an Array. In the first one you have to explicitly define the size upon the creating. This is how you create an Array to hold three integers:
 
+```java
 int[] numbers = new int[3];
+```
 
 ## Assigning and accessing elements
 
 An element of an Array is referred to by its index. In the example below we create an Array to hold 3 integers, and then assign values to indices 0 and 2. After that we print the values.
 
+```java
 int[] numbers = new int[3];
-
 numbers[0] = 2;
-
 numbers[2] = 5;
-
 System.out.println(numbers[0]);
-
 System.out.println(numbers[2]);
+```
 
 ## Size of an array and iterating
 
@@ -132,59 +131,47 @@ Here are the numbers again:
 
 Strings can't be compared with with the equals operator - ==. For strings, there exists a separate equals-command, which is always appended to the end of the string that we want to compare.
 
+```java
 String text = "course";
 
 if (text.equals("marzipan")) {
-
     System.out.println("The text variable contains the text marzipan.");
-
 } else {
-
     System.out.println("The text variable does not contain the text marzipan.");
-
 }
+```
 
 ## Splitting a String
 
 You can split a string to multiple pieces with the split-method of the String class. The method takes as a parameter a string denoting the place around which the string should be split. The split method returns an array of the resulting sub-parts. In the example below, the string has been split around a space.
 
+```java
 String text = "first second third fourth";
-
 String[] pieces = text.split(" ");
 
 System.out.println(pieces[0]);
-
 System.out.println(pieces[1]);
-
 System.out.println(pieces[2]);
-
 System.out.println(pieces[3]);
-
 System.out.println();
 
 for (int i = 0; i < pieces.length; i++) {
-
     System.out.println(pieces[i]);
-
 }
+```
 
-Sample output
+<u>*Sample output*</u>
 
+```
 first
-
 second
-
 third
-
 fourth
-
 first
-
 second
-
 third
-
 fourth
+```
 
 ![](https://lh7-us.googleusercontent.com/H3mwlXmCmoIXBpV5we7piwqGSUlOjTDSunyDSKSBQ9JZNnoC_G3Ry-x6GhXfIwYNY3kQqgNj-V4oNBcX8xJ85H_tYCk05IcQT68Cj-ypjpa-SWp5kpTTbAZ_wQ6-9YGBBvfVUkNQO_P9K7DAH02C7nI)
 
@@ -196,9 +183,11 @@ char character = text.charAt(0);
 
 System.out.println(character);
 
-Sample output
+```
+// Sample output
+```
 
-  H
+H
 
 ### Using Diverse Text
 
@@ -1700,8 +1689,6 @@ while (true) {
 
 The clock we implemented above is an object whose functionality is based on "simpler" objects, i.e., its hands. This is precisely the **great idea behind ​​object-oriented programming: a program is built from small and distinct objects that work together**
 
-
-
 ## Object
 
 An **Object** refers to an independent entity that contains both data (instance variables) and behavior (methods). Objects may come in lots of different forms: some may describe problem-domain concepts, others are used to coordinate the interaction that happens between objects. Objects interact with one another through method calls — these method calls are used to both request information from objects and give instructions to them.
@@ -1747,8 +1734,6 @@ public class Person {
 }
 ```
 
-
-
 ## Class
 
 A class defines the types of objects that can be created from it. It contains **instance variables** describing the object's data, a **constructor** or constructors used to create it, and **methods** that define its behavior. A rectangle class is detailed below which defines the functionality of a rectangle.
@@ -1788,21 +1773,143 @@ public class Rectangle {
 }
 ```
 
-
-
 Some of the methods defined above do not return a value (methods that have the keyword `void` in their definition), while others do (methods that specify the type of variable to be returned). The class above also defines the `toString` method, which returns the string used to print the object.
 
 Objects are created from the class through constructors by using the `new` command. Below, we'll create two rectangles and print information related to them.
 
 ## Removing repetitive code (overloading methods and constructors)
 
+### :building_construction: Constructor Overloading
 
+We would also like to be able to create persons so that the constructor is provided both the age as well as the name as parameters. This is possible since a class may have multiple constructors.
+
+<u>Let's make an alternative constructor</u>. 
+
+*The old constructor can remain in place.*
+
+```java
+public Person(String name) {
+        this.name = name;
+        this.age = 0;
+        this.weight = 0;
+        this.height = 0;
+    }
+
+public Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+    this.weight = 0;
+    this.height = 0;
+}
+```
+
+We now have **two** alternative ways to create objects:
+
+```java
+public static void main(String[] args) {
+    Person paul = new Person("Paul", 24);
+    Person ada = new Person("Ada");
+
+    System.out.println(paul);
+    System.out.println(ada);
+}
+```
+
+```
+// Sample output
+
+Paul is 24 years old.
+Ada is 0 years old.
+```
+
+The technique of having two (or more) constructors in a class is known as *constructor overloading*. A class can have multiple constructors that differ in the number and/or type of their parameters. It's not, however, possible to have two constructors with the exact same parameters.
+
+We cannot, for example, add a `public Person(String name, int weight)` constructor since it would be impossible for Java to differentiate 
+between this and the one that has two parameters where int parameter is 
+used for age.
+
+## Calling Your Constructor
+
+Hold on a moment. We'd previously concluded that "copy-paste" code is not a good idea. When you look at the overloaded constructors above, however, they have a lot in common. We're not happy with this.
+
+The first constructor - the one that receives a name as a parameter - is in fact a special case of the second constructor - the one that's given both name and age. What if the first constructor could call the second constructor?
+
+This is possible. A constructor can be called from another constructor using the `this` keyword, which refers to this object in question!
+
+Let's modify the first constructor so that it does not do anything by itself, but instead calls the second constructor and asks it to set the age to 0.
+
+```java
+public Person(String name) {
+    this(name, 0);
+    //here the code of the second constructor is run, and the age is set to 0
+}
+
+public Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+    this.weight = 0;
+    this.height = 0;
+}
+```
+
+The constructor call `this(name, 0);` might seem a bit weird. A way to think about it is to imagine that the call is automatically replaced with "copy-paste" of the second constructor in such a way that the age parameter is set to 0. NB! If a constructor calls another constructor, the constructor call must be the first command in the constructor.
+
+### Method Overloading
+
+Methods can be overloaded in the same way as constructors, i.e., multiple versions of a given method can be created. Once again, the parameters of the different versions must be different. Let's make another version of the `growOlder` method that ages the person by the amount of years given to it as a parameter.
+
+```java
+public void growOlder() {
+    this.age = this.age + 1;
+}
+
+public void growOlder(int years) {
+    this.age = this.age + years;
+}
+```
+
+In the example below, "Paul" is born 24 years old, ages by a year and then by 10 years:
+
+```java
+public static void main(String[] args) {
+    Person paul = new Person("Paul", 24);
+    System.out.println(paul);
+
+    paul.growOlder();
+    System.out.println(paul);
+
+    paul.growOlder(10);
+    System.out.println(paul);
+}
+```
+
+```
+// Sample output
+
+Paul is 24 years old.
+Paul is 25 years old.
+Paul is 35 years old.
+```
+
+A Person now has two methods, both called `growOlder`. The one that gets executed depends on the number of parameters provided.
+
+We may also modify the program so that the parameterless method is implemented using the method `growOlder(int years)`:
+
+```java
+public void growOlder() {
+    this.growOlder(1);
+}
+
+public void growOlder(int years) {
+    this.age = this.age + years;
+}
+```
+
+### Primitive and reference variables
 
 ---
 
 ---
-
-
 
 VOCABULARIO
 
