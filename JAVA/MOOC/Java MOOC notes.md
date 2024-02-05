@@ -1357,23 +1357,19 @@ for (Person person: persons) {
 
 The user input is read in string form. If we wanted to handle the input as integers, for instance, we'd have to convert it to another form. An example program has been provided below - it reads input from the user until the user inputs "end". As long as the user input is not "end" the inputs are handled as integers — in this case, the number is simply printed.
 
+```java
 Scanner scanner = new Scanner(System.in);
 
 while (true) {
 
     String row = scanner.nextLine();
-
     if (row.equals("end")) {
-
         break;
-
     }
-
     int number = Integer.valueOf(row);
-
     System.out.println(row);
-
 }
+```
 
 ## Reading From a File
 
@@ -1381,37 +1377,29 @@ Reading a file is done using the Scanner-class. When we want to read a file usin
 
 When the Scanner-object that reads the file has been created, the file can be read using a while-loop. The reading proceeds until all the lines of the file have been read, i.e., until the scanner finds no more lines to read. Reading a file may result in an error, and it's for this reason that the process requires separate blocks - one for the try, and another to catch potential errors. We'll be returning to the topic of error handling later.
 
+```java
 // first
-
 import java.util.Scanner;
-
 import java.nio.file.Paths;
 
 // in the program:
-
 // we create a scanner for reading the file
-
 try (Scanner scanner = new Scanner(Paths.get("file.txt"))) {
+    // we read the file until all lines have been read
+    while (scanner.hasNextLine()) {
+        // we read one line
 
-    // we read the file until all lines have been read
+        String row = scanner.nextLine();
+        // we print the line that we read
 
-    while (scanner.hasNextLine()) {
-
-        // we read one line
-
-        String row = scanner.nextLine();
-
-        // we print the line that we read
-
-        System.out.println(row);
-
-    }
-
+        System.out.println(row);
+    }
 } catch (Exception e) {
-
-    System.out.println("Error: " + e.getMessage());
-
+    System.out.println("Error: " + e.getMessage());
 }
+```
+
+
 
 A file is read from the project root by default ( when new Scanner(Paths.get("file.txt")) is called), i.e., the folder that contains the folder src and the file pom.xml (and possibly other files as well). The contents of this folder can the inspected using the Files-tab in NetBeans.
 
@@ -1439,29 +1427,26 @@ El manejo de excepciones permite que tu programa reaccione adecuadamente a estas
 
 ** In the example below, we read all the lines of the file "file.txt", which are then added to an ArrayList.
 
+```java
 ArrayList<String> lines = new ArrayList<>();
 
 // we create a scanner for reading the file
 
 try (Scanner scanner = new Scanner(Paths.get("file.txt"))) {
-
     // we read all the lines of the file
 
     while (scanner.hasNextLine()) {
-
         lines.add(scanner.nextLine());
-
     }
-
 } catch (Exception e) {
-
     System.out.println("Error: " + e.getMessage());
-
 }
-
 // we print the total number of lines
 
 System.out.println("Total lines: " + lines.size());
+```
+
+
 
 ***Ejercicio IsItInTheFile Part 4***
 
@@ -1481,27 +1466,24 @@ Creating objects from data that is read from a file is straightforward. Let's as
 
 Reading objects can be done like so:
 
+```java
 ArrayList<Person> people = new ArrayList<>();
 
 try (Scanner scanner = new Scanner(Paths.get("records.txt"))) {
-
     while (scanner.hasNextLine()) {
 
         String line = scanner.nextLine();
-
         String[] parts = line.split(",");
-
         String name = parts[0];
-
         int age = Integer.valueOf(parts[1]);
-
         people.add(new Person(name, age));
-
     }
-
 }
 
 System.out.println("Total amount of people read: " + people.size());
+```
+
+
 
 Reading objects from a file is a clear responsibility in and of itself, and should for that reason be isolated into a method.
 
@@ -1573,8 +1555,7 @@ while (true) {
 
 <mark>Our aim is to make the program more understandable.</mark>
 
-Since a clock hand is a clear concept in its own right, a good way to improve 
-the program's clarity would be to turn it into a class. Let's create a `ClockHand` class that describes a clock hand, which contains information about its value, upper limit *(i.e., the point at which the value of the hand returns to zero)*, and provides methods for advancing the hand, viewing  its value, and also printing the value in string form.
+Since a clock hand is a clear concept in its own right, a good way to improve the program's clarity would be to turn it into a class. Let's create a `ClockHand` class that describes a clock hand, which contains information about its value, upper limit *(i.e., the point at which the value of the hand returns to zero)*, and provides methods for advancing the hand, viewing  its value, and also printing the value in string form.
 
 ```java
 public class ClockHand {
@@ -1608,8 +1589,7 @@ public class ClockHand {
 }
 ```
 
-Once we've created the ClockHand class, our clock has become clearer. 
-It's now straightforward to print the clock, i.e., the clock hand, and  the hand's progression is hidden away in the ClockHand class. Since the  the hand returns to the beginning automatically with the help of the upper-limit variable defined by the ClockHand class, the way the hands work together is slightly different than in the implementation that used integers. That one looked at whether the value of the integer that represented the clock hand exceeded the upper limit, after which its value was set to zero and the value of the integer representing the next clock hand was incremented. Using clock-hand objects, the minute hand advances when the second hand's value is zero, and the hour hand advances when the minute hand's value is zero.
+Once we've created the ClockHand class, our clock has become clearer. It's now straightforward to print the clock, i.e., the clock hand, and  the hand's progression is hidden away in the ClockHand class. Since the  the hand returns to the beginning automatically with the help of the upper-limit variable defined by the ClockHand class, the way the hands work together is slightly different than in the implementation that used integers. That one looked at whether the value of the integer that represented the clock hand exceeded the upper limit, after which its value was set to zero and the value of the integer representing the next clock hand was incremented. Using clock-hand objects, the minute hand advances when the second hand's value is zero, and the hour hand advances when the minute hand's value is zero.
 
 ```java
 ClockHand hours = new ClockHand(24);
@@ -1634,11 +1614,7 @@ while (true) {
 }
 ```
 
-**Object-oriented programming is primarily about isolating 
-concepts into their own entities or, in other words, creating 
-abstractions**. Despite the previous example, one might deem it 
-pointless to create an object containing only a number since the same 
-could be done directly with `int` variables. However, that is not always the case.
+**Object-oriented programming is primarily about isolating concepts into their own entities or, in other words, creating abstractions**. Despite the previous example, one might deem it pointless to create an object containing only a number since the same could be done directly with `int` variables. However, that is not always the case.
 
 Separating a concept into its own class is a good idea for many reasons. Firstly, certain details (such as the rotation of a hand) can be hidden inside the class (i.e., **abstracted**). Instead of typing an if-statement and an assignment operation, it's enough for the one using the clock hand to call a clearly-named method `advance()`. The resulting clock hand may be used as a building block for other programs as well - the class could be named `CounterLimitedFromTop`, for instance. That is, a class created from a distinct concept can serve multiple purposes. Another massive advantage is that since the   details of the implementation of the clock hand are not visible to its user, they can be changed if desired.
 
@@ -1906,6 +1882,649 @@ public void growOlder(int years) {
 ```
 
 ### Primitive and reference variables
+
+Variables in Java are classified into primitive and reference 
+variables. From the programmer's perspective, a primitive variable's 
+information is stored as the value of that variable, whereas a reference
+ variable holds a reference to information related to that variable. 
+reference variables are practically always objects in Java. Let's take a
+ look at both of these types with the help of two examples.
+
+```java
+int value = 10;
+System.out.println(value);
+```
+
+Sample output
+
+10
+
+```java
+public class Name {
+    private String name;
+
+    public Name(String name) {
+        this.name = name;
+    }
+}
+```
+
+```java
+Name luke = new Name("Luke");
+System.out.println(luke);
+```
+
+```
+// Sample output
+
+Name@4aa298b7
+```
+
+
+
+In the first example, we create a primitive `int` variable, and the number 10 is stored as its value. When we pass the variable to the `System.out.println` method, the number `10` is printed. In the second example, we create a reference variable called `luke`. A reference to an object is returned by the constructor of the `Name` class when we call it, and this reference is stored as the value of the variable. When we print the variable, we get `Name@4aa298b7` as output. What is causing this?
+
+The method call `System.out.println` prints the value of the variable. The value of a primitive variable is 
+concrete, whereas the value of a reference variable is a reference. When
+ we attempt to print the value of a reference variable, the output 
+contains the type of the variable and an identifier created for it by 
+Java: the string `Name@4aa298b7` tells us that the given variable is of type `Name` and its identifier is `4aa298b7`.
+
+The previous example applies whenever the programmer has not altered an 
+object's default print format. You can modify the default print by defining the `toString` method within the class of the given object, where you specify what the objects print should look like. In the example below, we've defined the`public String toString()` method within the `Name` class, which returns the instance variable `name`. Now, when we print any object that is an instance of the `Name` class with the `System.out.println` command, the string returned by the `toString` method is what gets printed.
+
+```java
+public class Name {
+    private String name;
+
+    public Name(String name) {
+        this.name = name;
+    }
+
+    public String toString() {
+        return this.name;
+    }
+}
+```
+
+```java
+Name luke = new Name("Luke");
+System.out.println(luke); // equal to System.out.println(luke.toString());
+```
+
+```
+// Sample output
+
+Luke
+```
+
+
+
+### Primitive Variables
+
+Java has eight different primitive variables. These are: `boolean` (a truth value: either `true` or `false`), `byte` (a byte containing 8 bits, between the values `-128` and `127`), `char` (a 16-bit value representing a single character), `short` (a 16-bit value that represents a small integer, between the values `-32768` and `32767`), `int` (a 32-bit value that represents a medium-sized integer, between the values `-231` and `231-1`), `long` (a 64-bit value that represents a large integer, between values `-263` and `263-1`), `float` (a floating-point number that uses 32 bits), and `double` (a floating-point number that uses 64 bits).
+
+
+
+## Reference Variables
+
+All
+ of the variables provided by Java (other than the eight primitive 
+variables mentioned above) are reference type. A programmer is also free
+ to create their own variable types by defining new classes. In 
+practice, any object instanced from a class is a reference variable.
+
+Let's look at the example from the beginning of the chapter where we created a variable called 'leevi' of type Name.
+
+```java
+Name leevi = new Name("Leevi");
+```
+
+The call has the following parts:
+
+- Whenever a new variable is declared, its type must be stated first. We declare a variable of type `Name` below. For the program to execute successfully, there must be a `Name` class available for the program to use.
+
+```java
+Name ...
+```
+
+- We state the name of the variable as its declared. You can reference
+   the value of the variable later on by its name. Below, the variable 
+  name is defined as leevi.
+
+```java
+Name leevi...
+```
+
+- Values can be assigned to variables. Objects are created from 
+  classes by calling the class constructor. This constructor defines the 
+  values assigned to the instance variables of the object being created. 
+  We're assuming in the example below that the class `Name` has a constructor that takes a string as parameter.
+
+```java
+... new Name("Leevi");
+```
+
+- The constructor call returns a value that is a reference to the 
+  newly-created object. The equality sign tells the program that the value
+   of the right-hand side expression is to be copied as the value of the 
+  variable on the left-hand side. The reference to the newly-created 
+  object, returned by the constructor call, is copied as the value of the 
+  variable `leevi`.
+
+```java
+Name leevi = new Name("Leevi");
+```
+
+The
+ most significant difference between primitive and reference variables 
+is that primitives (usually numbers) are immutable. The internal state 
+of reference variables, on the other hand, can typically be mutated. 
+This has to do with the fact that the value of a primitive variable is 
+stored directly in the variable, whereas the value of a reference 
+variable is a reference to the variable's data, i.e., its internal 
+state.
+
+Arithmetic operations, such as addition, subtraction, and 
+multiplication can be used with primitive variables — these operations 
+do not change the original values of the variables. Arithmetic 
+operations create new values that can be stored in variables as needed. 
+Conversely, the values of reference variables cannot be changed by these
+ arithmetic expressions.
+
+The value of a reference variable — i.e.,
+ the reference — points to a location that contains information relating
+ to the given variable. Let's assume that we have a Person class 
+available to us, containing an instance variable 'age'. If we've 
+instantiated a person object from the class, we can get our hands on the
+ age variable by following the object's reference. The value of this age
+ variable can then be changed as needed.
+
+
+
+## Primitive and Reference Variable as Method Parameters
+
+We
+ mentioned earlier that the value of a primitive variable is directly 
+stored in the variable, whereas the value of a reference variable holds a
+ reference to an object. We also mentioned that assigning a value with 
+the equality sign copies the value (possibly of some variable) on the 
+right-hand side and stores it as the value of the left-hand side 
+variable.
+
+A similar kind of copying occurs during a method call. 
+Regardless of whether the variable is primitive or reference type, the 
+value passed to the method as an argument is copied for the called 
+method to use. With primitive variables, the value of the variable is 
+conveyed to the method. With reference variables, it's a reference.
+
+Let's look at this in practice and assume that we have the following `Person` class available to us.
+
+```java
+public class Person {
+    private String name;
+    private int birthYear;
+
+    public Person(String name) {
+        this.name = name;
+        this.birthYear = 1970;
+    }
+
+    public int getBirthYear() {
+        return this.birthYear;
+    }
+
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+
+    public String toString() {
+        return this.name + " (" + this.birthYear + ")";
+    }
+}
+```
+
+We'll inspect the execution of the program step by step.
+
+```java
+public class Example {
+    public static void main(String[] args) {
+        Person first = new Person("First");
+
+        System.out.println(first);
+        youthen(first);
+        System.out.println(first);
+
+        Person second = first;
+        youthen(second);
+
+        System.out.println(first);
+    }
+
+    public static void youthen(Person person) {
+        person.setBirthYear(person.getBirthYear() + 1);
+    }
+}
+```
+
+Sample output
+
+First (1970)
+First (1971)
+First (1972)
+
+### Variables and Computer Memory
+
+In the course's material, concrete details related to variables and computer memory are simplified. Topics related to memory are dealt with on a level of abstraction that's suitable for learning programming. As an example, the description that the statement `int number = 5` reserves a location for the variable `number` in the memory, and copies the value 5 into it, is sufficient with regard to the learning objectives of this course.
+
+From the perspective of the operating system, a lot more happens when the statement `int number = 5` is executed. A locker of size 32-bits is reserved in memory for the value `5`, and another one for the `number` variable. The size of the location is determined by the type of variable in question. Once this is done, the contents of the memory location storing the value 5 are copied into the memory location of the `number` variable.
+
+To add to the above, the `number` variable is technically not a memory location or a container. The value of the variable `number` is an address in memory — information attached to the variable about its type specifies how much data should be retrieved from its address. 
+
+
+As an example, this is 32 bits for an integer.
+
+We'll return to this briefly in the advanced programming course. The topic is dealt with in depth in the Computer Organization course.
+
+You have reached the end of this section
+
+
+
+## Objects and references *(Part 5-4)*
+
+Let's continue working with objects and references. Assume we can use the class that represents a person, shown below. Person has object variables name, age, weight and height. Additionally, it contains methods to calculate the body mass index, among other things.
+
+```java
+public class Person {
+
+    private String name;
+    private int age;
+    private int weight;
+    private int height;
+
+    public Person(String name) {
+        this(name, 0, 0, 0);
+    }
+
+    public Person(String name, int age, int height, int weight) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
+    }
+
+    // other constructors and methods
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public void growOlder() {
+        this.age = this.age + 1;
+    }
+
+    public void setHeight(int newHeight) {
+        this.height = newHeight;
+    }
+
+    public void setWeight(int newWeight) {
+        this.weight = newWeight;
+    }
+
+    public double bodyMassIndex() {
+        double heightPerHundred = this.height / 100.0;
+        return this.weight / (heightPerHundred * heightPerHundred);
+    }
+
+    @Override
+    public String toString() {
+        return this.name + ", age " + this.age + " years";
+    }
+}
+```
+
+Precisely what happens when a new object is created?
+
+```java
+Person joan = new Person("Joan Ball");
+```
+
+Calling a constructor with the command `new` causes several things to happen. First, space is reserved in the computer memory for storing object variables. Then default or initial values are set to object variables (e.g. an `int` type variable receives an initial value of 0). Lastly, the source code in the constructor is executed.
+
+A constructor call returns a reference to an object. A **reference** is information about the location of object data.
+
+  [![olio joan](https://java-programming.mooc.fi/static/4305b4aa2098287afc1ddda0ff254040/e9131/olio-joan.png "olio joan")](https://java-programming.mooc.fi/static/4305b4aa2098287afc1ddda0ff254040/e9131/olio-joan.png)
+
+So the value of the variable is set to be a reference,  i.e. knowledge about the location of related object data. The image above also reveals that strings — the name of our example person, for instance — are objects, too.
+
+## Assigning a reference type variable copies the reference
+
+Let's add a `Person` type variable called `ball` into the program, and assign `joan` as its initial value. What happens then?
+
+```java
+Person joan = new Person("Joan Ball");
+System.out.println(joan);
+
+Person ball = joan;
+```
+
+The statement `Person ball = joan;` creates a new Person variable `ball`, and copies the value of the variable `joan` as its value. As a result, `ball` refers to the same object as `joan`.
+
+  [![olio joan ja ball](https://java-programming.mooc.fi/static/2922372f4ac941766a0a7b5ce115e155/e9131/olio-joan-ja-ball.png "olio joan ja ball")](https://java-programming.mooc.fi/static/2922372f4ac941766a0a7b5ce115e155/e9131/olio-joan-ja-ball.png)
+
+Let's inspect the same example a little more thoroughly.
+
+```java
+Person joan = new Person("Joan Ball");
+System.out.println(joan);
+
+Person ball = joan;
+ball.growOlder();
+ball.growOlder();
+
+System.out.println(joan);
+```
+
+The resulting output is:
+
+```
+Joan Ball, age 0 years
+Joan Ball, age 2 years
+```
+
+Joan Ball — i.e. the Person object that the reference in the `joan` variable points at — starts as 0 years old. After this the value of the `joan` variable is assigned (so copied) to the `ball` variable. The Person object `ball` is aged by two years, and Joan Ball ages as a consequence!
+
+An object's internal state is not copied when a variable's value is assigned. A new object is not being created in the statement `Person ball = joan;` — the value of the variable ball is assigned to be the copy of joan's value, i.e. a reference to an object.
+
+  [![olio joan ja ball 2](https://java-programming.mooc.fi/static/f63dfc37e73911b8ee3529f10611d37c/7cb89/olio-joan-ja-ball-2.png "olio joan ja ball 2")](https://java-programming.mooc.fi/static/f63dfc37e73911b8ee3529f10611d37c/7cb89/olio-joan-ja-ball-2.png)
+
+Next, the example is continued so that a new object is created for the `joan` variable, and a reference to it is assigned as the value of the variable. The variable `ball` still refers to the object that we created earlier.
+
+```java
+Person joan = new Person("Joan Ball");
+System.out.println(joan);
+
+Person ball = joan;
+ball.growOlder();
+ball.growOlder();
+
+System.out.println(joan);
+
+joan = new Person("Joan B.");
+System.out.println(joan);
+```
+
+The following is printed:
+
+```
+Joan Ball, age 0 years
+Joan Ball, age 2 years
+Joan B., age 0 years
+```
+
+So in the beginning the variable `joan` contains a reference to one object, but in the end a reference to another object has been copied as its value. Here is a picture of the situation after the last line of code.
+
+  [![olio joan ja ball 3](https://java-programming.mooc.fi/static/d8a908095f7fbd15977399d9577bfbbd/7cb89/olio-joan-ja-ball-3.png "olio joan ja ball 3")](https://java-programming.mooc.fi/static/d8a908095f7fbd15977399d9577bfbbd/7cb89/olio-joan-ja-ball-3.png)
+
+## `null` value of a reference variable
+
+Let's extend the example further by setting the value of the reference variable `ball` to `null`, i.e. a reference "to nothing". The `null` reference can be set as the value of any reference type variable.
+
+```java
+Person joan = new Person("Joan Ball");
+System.out.println(joan);
+
+Person ball = joan;
+ball.growOlder();
+ball.growOlder();
+
+System.out.println(joan);
+
+joan = new Person("Joan B.");
+System.out.println(joan);
+
+ball = null;
+```
+
+The situation of the program after the last line is depicted below.
+
+  [![olio joan ja ball null](https://java-programming.mooc.fi/static/2127e1a4c68fe520c142f4c7875caae4/7cb89/olio-joan-ja-ball-null.png "olio joan ja ball null")](https://java-programming.mooc.fi/static/2127e1a4c68fe520c142f4c7875caae4/7cb89/olio-joan-ja-ball-null.png)
+
+The object whose name is Joan Ball is referred to by nobody. In other words, the object has become "garbage". In the Java programming language the programmer need not worry about the program's memory use. From time to time, the automatic garbage collector of the Java language cleans up the objects that have become garbage. If the 
+garbage collection did not happen, the garbage objects would reserve a memory location until the end of the program execution.
+
+Let's see what happens when we try to print a variable that references "nothing" i.e. `null`.
+
+```java
+Person joan = new Person("Joan Ball");
+System.out.println(joan);
+
+Person ball = joan;
+ball.growOlder();
+ball.growOlder();
+
+System.out.println(joan);
+
+joan = new Person("Joan B.");
+System.out.println(joan);
+
+ball = null;
+System.out.println(ball);
+```
+
+The resulting output is:
+
+```
+Joan Ball, age 0 years
+Joan Ball, age 2 years
+Joan B., age 0 years
+null
+```
+
+Printing a `null` reference prints "null". How about if we were to try and call a method, say `growOlder`, on an object that refers to nothing:
+
+```java
+Person joan = new Person("Joan Ball");
+System.out.println(joan);
+
+joan = null;
+joan.growOlder();
+```
+
+The result output is:
+
+```
+// Sample output
+
+Joan Ball, age 0 years 
+**Exception in thread "main" java.lang.NullPointerException at Main.main(Main.java:(row))
+Java Result: 1**
+```
+
+Bad things follow. This could be the first time you have seen the text **NullPointerException**. In the course of the program, there occured an error indicating that we called a method on a variable that refers to nothing.
+
+We promise that this is not the last time you will encounter the previous  error. When you do, the first step is to look for variables whose value could be `null`. Fortunately, the error message is useful: it tells which row caused the error. Try it out yourself!
+
+
+
+## Object as a method parameter
+
+We have seen both primitive and reference variables act as method parameters. Since objects are reference variables, any type of object can be defined to be a method parameter. Let's take a look at a practical demonstration.
+
+Amusement park rides only permit people who are taller than a certain height. The limit is not the same for all attractions. Let's create a class representing an amusement park ride. When creating a new object, the constructor receives as parameters the name of the ride, and the smallest height that permits entry to the ride.
+
+```java
+public class AmusementParkRide {
+    private String name;
+    private int lowestHeight;
+
+    public AmusementParkRide(String name, int lowestHeight) {
+        this.name = name;
+        this.lowestHeight = lowestHeight;
+    }
+
+    public String toString() {
+        return this.name + ", minimum height: " + this.lowestHeight;
+    }
+}
+```
+
+Then let's write a method that can be used to check if a person is allowed to enter the ride, so if they are tall enough. The method returns `true` if the person given as the parameter is permitted access, and `false` otherwise.
+
+Below, it is assumed that Person has the method `public int getHeight()` that returns the height of the person.
+
+```java
+public class AmusementParkRide {
+    private String name;
+    private int lowestHeight;
+
+    public AmusementParkRide(String name, int lowestHeight) {
+        this.name = name;
+        this.lowestHeight = lowestHeight;
+    }
+
+    public boolean allowedToRide(Person person) {
+        if (person.getHeight() < this.lowestHeight) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public String toString() {
+        return this.name + ", minimum height: " + this.lowestHeight;
+    }
+}
+```
+
+So the method `allowedToRide` of an AmusementParkRide object is given a `Person` object as a parameter. Like earlier, the value of the variable — in this case, a reference — is copied for the method to use. The method handles a copied reference, and it calls the `getHeight` method of the person passed as a parameter.
+
+Below is an example main program where the amusement park ride method is called twice: first the supplied parameter is a person object `matt`, and then a person object `jasper`:
+
+```java
+Person matt = new Person("Matt");
+matt.setWeight(86);
+matt.setHeight(180);
+
+Person jasper = new Person("Jasper");
+jasper.setWeight(34);
+jasper.setHeight(132);
+
+AmusementParkRide waterTrack = new AmusementParkRide("Water track", 140);
+
+if (waterTrack.allowedToRide(matt)) {
+    System.out.println(matt.getName() + " may enter the ride");
+} else {
+    System.out.println(matt.getName() + " may not enter the ride");
+}
+
+if (waterTrack.allowedToRide(jasper)) {
+    System.out.println(jasper.getName() + " may enter the ride");
+} else {
+    System.out.println(jasper.getName() + " may not enter the ride");
+}
+
+System.out.println(waterTrack);
+```
+
+The output of the program is:
+
+```
+// Sample output
+
+Matt may enter the ride
+Jasper may not enter the ride
+Water track, minimum height: 140
+```
+
+
+
+***What if we wanted to know how many people have taken the ride?***
+
+Let's add an object variable to the amusement park ride. It keeps track of the number of people that were permitted to enter.
+
+```java
+public class AmusementParkRide {
+    private String name;
+    private int lowestHeight;
+    private int visitors;
+
+    public AmusementParkRide(String name, int lowestHeight) {
+        this.name = name;
+        this.lowestHeight = lowestHeight;
+        this.visitors = 0;
+    }
+
+    public boolean allowedToRide(Person person) {
+        if (person.getHeight() < this.lowestHeight) {
+            return false;
+        }
+
+        this.visitors++;
+        return true;
+    }
+
+    public String toString() {
+        return this.name + ", minimum height: " + this.lowestHeight +
+            ", visitors: " + this.visitors;
+    }
+}
+```
+
+Now the previously used example program also keeps track of the number of visitors who have experienced the ride.
+
+```java
+Person matt = new Person("Matt");
+matt.setWeight(86);
+matt.setHeight(180);
+
+Person jasper = new Person("Jasper");
+jasper.setWeight(34);
+jasper.setHeight(132);
+
+AmusementParkRide waterTrack = new AmusementParkRide("Water track", 140);
+
+if (waterTrack.allowedToRide(matt)) {
+    System.out.println(matt.getName() + " may enter the ride");
+} else {
+    System.out.println(matt.getName() + " may not enter the ride");
+}
+
+if (waterTrack.allowedToRide(jasper)) {
+    System.out.println(jasper.getName() + " may enter the ride");
+} else {
+    System.out.println(jasper.getName() + " may not enter the ride");
+}
+
+System.out.println(waterTrack);
+```
+
+The output of the program is:
+
+```
+//Sample output
+
+Matt may enter the ride Jasper may not enter the ride Water track,
+minimum height: 140, visitors: 1.
+```
+
+
+
+##### Assisted creation of constructors, getters, and setters
+
+Development environments can help the programmer. If you have created object variables for a class, creating constructors, getters, and setters can be done almost automatically.
+
+Go inside the code block of the class, but outside of all the methods, and simultaneously press ctrl and space. If your class has e.g. an object variable `balance`, NetBeans offers the option to generate the getter and setter methods for the object variable, and a constuctor that assigns an initial value for that variable.
+
+On some Linux machines, like on the ones on the Kumpula campus (University of Helsinki), this feature is triggered by simultaneously pressing ctrl, alt, and space.
 
 ---
 
