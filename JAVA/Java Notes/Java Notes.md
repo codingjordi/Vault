@@ -20,6 +20,12 @@ When you create an object, you are creating an **instance of a class**, which is
 
 Each object has its own unique identity, and it maintains its own state by storing the values a of its attributes.
 
+
+
+#### :bulb:Entity vs Functional classes
+
+![](/home/jordi/MyProjects/JAVA/Java%20Notes/img/image0(1).jpeg)
+
 <img title="" src="file:///home/jordi/MyProjects/JAVA/Java%20Notes/img/personClassDefn.png" alt="" width="442" data-align="center">
 
 ### Creating Objects
