@@ -4,19 +4,19 @@
 
 ## Homework :pencil:
 
-- [ ] **Java SE Lab#SE04-01** (revisar el que hem fet i fer replica del que hem fet till now)
+- [ ] ~~**Java SE Lab#SE04-01** (revisar el que hem fet i fer replica del que hem fet till now)~~
 
 - [x] **React: Describing the UI**
 
-- [ ] **React: Adding Interactivity**
+- [ ] ~~**React: Adding Interactivity**~~
 
-- [ ] **Create-react-project** React Lab#06-01
+- [ ] ~~**Create-react-project** React Lab#06-01~~
 
-- [ ] **ReactJS 18: Rules of Hooks** *(albertprofe.dev)*
+- [ ] ~~**ReactJS 18: Rules of Hooks** *(albertprofe.dev)*~~
 
-- [ ] **ReactJS 18: useState** *(albertprofe.dev)*
+- [ ] ~~**ReactJS 18: useState** *(albertprofe.dev)*~~
 
-- [ ] **Diagrama  de secuencias Albert** *(mirar i intentar entendre)*
+- [ ] ~~**Diagrama  de secuencias Albert** *(mirar i intentar entendre)*~~
 
 ## Others :bulb:
 
@@ -31,6 +31,6 @@
 
 - [ ] **Sprint Backlog: 31/01/2024** (*preparar la classe de React*)
 
-- [ ] **<u>Backlog 05/02/2024</u>**
+- [ ] ~~**<u>Backlog 05/02/2024</u>**~~
 
 - [ ] **Modify plan if needed :smile:**
