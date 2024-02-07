@@ -1,6 +1,8 @@
-React
+# React
 
-1. Introduccion a React
+## What is React?
+
+## 1. Introduction to React
 
 React.js is a JavaScript library used for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React allows developers to create large web applications that use data which can change over time, without reloading the page.
 
@@ -10,205 +12,154 @@ We built React to solve one problem: building large applications with data that 
 
 React is not considered a framework, but a JavaScript library for building User Interfaces. It’s considered the view in the MVC pattern.
 
-It helps create modular web components that look just like HTML, thanks to JSX. JSX is a JavaScript syntax extension built by Facebook to define a concise and familiar syntax for creating tree structures with attributes.
+It helps create modular web components that look just like HTML, thanks to JSX. 
 
-1.1. Main features
+JSX is a JavaScript syntax extension built by Facebook to define a concise and familiar syntax for creating tree structures with attributes.
 
-1. It is a single-page application (SPA) framework, which means it allows developers to create web applications that load a single HTML page and dynamically update the page in response to user actions without reloading the page. This makes React applications faster and more responsive than traditional web applications.
+## 1.1. Main features
 
-2. Components: In React, everything is a component. Components are small, reusable pieces of code that can be easily combined to create complex user interfaces.
+1. **It is a single-page application (SPA)** framework, which means it allows developers to create web applications that load a single HTML page and dynamically update the page in response to user actions without reloading the page. This makes React applications faster and more responsive than traditional web applications.
 
-3. Virtual DOM: React uses a virtual DOM (Document Object Model) to improve the performance of components. The virtual DOM is a lightweight in-memory representation of the actual DOM, and it allows React to update only the specific components that have changed, instead of re-rendering the entire page.
+2. **Components**: In React, everything is a component. Components are small, reusable pieces of code that can be easily combined to create complex user interfaces.
 
-4. JSX: React uses JSX, which is a syntax extension to JavaScript that allows developers to write HTML-like code that can be compiled into JavaScript. This allows developers to use familiar HTML tags and attributes to build React components, making it easier to write and understand React code.
+3. **Virtual DOM**: React uses a virtual DOM (Document Object Model) to improve the performance of components. The virtual DOM is a lightweight in-memory representation of the actual DOM, and it allows React to update only the specific components that have changed, instead of re-rendering the entire page.
 
-5. State: React components have a built-in state object that stores the local data of a component. The state of a component can be updated in response to user actions or other events, and the updated state will automatically be reflected in the user interface.
+4. **JSX**: React uses JSX, which is a syntax extension to JavaScript that allows developers to write HTML-like code that can be compiled into JavaScript. This allows developers to use familiar HTML tags and attributes to build React components, making it easier to write and understand React code.
 
-6. Props: In React, components can receive data from their parent components through props, which are essentially input parameters that allow components to be customized and reused. Props can be used to pass data, functions, or any other type of information to a child component.
+5. **State**: React components have a built-in state object that stores the local data of a component. The state of a component can be updated in response to user actions or other events, and the updated state will automatically be reflected in the user 
+   interface.
 
-7. Routing: React Router is a popular library that provides routing capabilities to React applications. It allows developers to define the different routes of the application, and to map each route to a specific component. This makes it possible to create a single-page application with multiple pages and views, without reloading the page. El enrutamiento (routing) en React se refiere a la gestión de las diferentes vistas o páginas en una aplicación de una sola página (SPA). En lugar de recargar la página completa al navegar entre diferentes secciones, una aplicación de React con enrutamiento permite actualizar solo las partes relevantes de la interfaz de usuario mientras mantiene la sensación de navegación tradicional.
+6. **Props**: In React, components can receive data from their parent components through props, which are essentially input parameters that allow components to be customized and reused. Props can be used to pass data, functions, or any other type of information to a child component.
 
-En React, tanto props como state son conceptos fundamentales que se utilizan para gestionar y actualizar la información en los componentes. Sin embargo, tienen propósitos y características ligeramente diferentes.
+7. **Routing**: React Router is a popular library that provides routing capabilities to React applications. It allows developers to define the different routes of the application, and to map each route to a specific component. This makes it possible to create a single-page application with multiple pages and views, without reloading the page.
 
-1. Props (Propiedades):
-- Inmutable: Las props son pasadas de un componente padre a un componente hijo como argumentos. Son inmutables, lo que significa que no pueden ser modificadas por el componente hijo.
 
-- Unidireccional: El flujo de datos con props es unidireccional, es decir, las propiedades se pasan desde el componente padre al componente hijo, pero no viceversa.
 
-- Datos externos: Las props representan datos que son controlados externamente al componente. Son una forma de comunicación entre componentes.
+## 1.3 Key-concept: Hooks
 
-Ejemplo .jsx
+In React, Hooks are a new feature introduced in React 16.8 that allows developers to use state and other React features without writing a class. They are designed to make it easier to reuse stateful logic between components, and to better manage side effects in function components.
 
-// En el componente padre
+Important
 
-<MiComponente prop1="valor1" prop2="valor2" />
+📘 **Clear lifecycle**
 
-// En el componente hijo
+Hooks allow developers to use state and other React features by writing **functions**, rather than creating class-based components. This makes it possible to use state and other React features without the **overhead of managing a class and its lifecycle**.
 
-function MiComponente(props) {
+```java
+import React, { useState } from 'react';
 
-  console.log(props.prop1); // valor1
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
 
-  console.log(props.prop2); // valor2
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
 
+For example, instead of using a class to define a component, you can use the useState Hook to add state to a function component:
+
+In this example, the useState Hook is used to add state to the Example component. The `useState` function returns a pair of values: the current state, and a function 
+that can be used to update the state. The current state is stored in the `count` variable, and the function to update the state is stored in the `setCount` variable.
+
+Hooks are a powerful and flexible tool that can help simplify and improve the way you write React components. They allow you to use state and other React features without the overhead of class-based components, and they make it easier to reuse stateful logic between components.
+
+## 1.4 With JSX and Hooks comes order in just one document
+
+Important
+
+📘 **No need of classes**
+
+**Hooks** are a new feature ([and addition in React 16.8](https://reactjs.org/docs/hooks-intro.html)) that allows developers to use state and other React features **without writing a class**.
+
+📘 **Hooks and JSX**
+
+They are a powerful tool for simplifying and improving the way you write React components, and they can be used to **combine the HTML, CSS, business logic, model, and navigation code of a component into a single, cohesive unit**.
+
+---
+
+Here is an example of a React component that uses **Hooks to combine HTML, CSS, business logic, and navigation code in a single file**:
+
+```java
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import './styles.css';
+
+function ExampleComponent(props) {
+  const { data } = props;
+  const [count, setCount] = useState(0);
+
+  return (
+    <div className="example-component">
+      <h1>Example Component</h1>
+      <p>{data.description}</p>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+      <Link to="/">Back to Home</Link>
+    </div>
+  );
 }
 
-State (Estado):
+export default ExampleComponent;
+```
 
-- Mutable: El estado es un objeto que representa información interna del componente y puede cambiar a lo largo del tiempo. A diferencia de las props, el estado puede ser modificado por el componente mismo utilizando el método setState.
+In this example, the `useState` Hook is used to add state to the `ExampleComponent` function. The `useState` function returns a pair of values: the current state, and a function that can be used to update the state.
 
-- Local al componente: El estado es local al componente que lo posee y no se comparte directamente con otros componentes. Cada componente puede tener su propio estado.
+The current state is stored in the `count` variable, and the function to update the state is stored in the `setCount` variable.
 
-- Control interno: El estado se utiliza para gestionar información que puede cambiar debido a interacciones del usuario, eventos, etc.
+These variables are used in the JSX code of the component to render the current state and to update the state in response to user actions. This allows the different types of code to be combined into a single, cohesive unit using **Hooks**.
 
-Ejemplo .jsx
+## 1.5 History
 
-class MiComponente extends React.Component {
+- `React.JS` was first used in **2011 for Facebook’s Newsfeed feature.**
+- Facebook Software Engineer, [Jordan Walke](https://twitter.com/jordwalke), created it.
+- Initial Release to the Public (V0.3.0) was in July 2013.
+- Current version of `React.JS` is [V18.2.0](https://reactjs.org/versions/) (2023).
+  - Current version of `create-react-app` [link](https://create-react-app.dev/) is v5.0.1 (2022).
+- `create-react-app` includes built tools such as webpack, Babel, and ESLint: [link](https://reactjs.org/docs/create-a-new-react-app.html)
+- If you’re learning React / creating a **new single-page app**, use `Create React App`.
+- If you’re building a **server-rendered website with Node.js**, try `Next.js`.
+- If you’re building a **static content-oriented website**, try `Gatsby`.
+- If you’re building a component library or integrating with an existing codebase, try [More Flexible Toolchains](https://reactjs.org/docs/create-a-new-react-app.html#more-flexible-toolchains).
 
-  constructor(props) {
 
-    super(props);
 
-    this.state = {
+## What is a Hook?
 
-      contador: 0
+## 1 Overview
 
-    };
+**Hooks** are JavaScript functions, but you need to follow two rules when using them. We provide a linter plugin to enforce these rules automatically:
 
-  }
+### 1.1 Rule #1: Only Call Hooks at the Top Level
 
-  incrementarContador = () => {
+> Don’t call Hooks inside loops, conditions, or nested functions.
 
-    this.setState({ contador: this.state.contador + 1 });
+Instead, always use Hooks at the top level of your React function, before any early returns.
 
-  }
+By following this rule, you ensure that Hooks are called in the same order each time a component renders.
 
-  render() {
+That’s what allows React to correctly preserve the state of Hooks between multiple useState and useEffect calls.
 
-    return (
+### 1.2 Rule #2: Only Call Hooks from React Functions
 
-      <div>
+> Don’t call Hooks from regular JavaScript functions. Instead, you can:    
 
-        <p>Contador: {this.state.contador}</p>
+- Call `Hooks` **from React function components**.
+  
+  
+- Call `Hooks` `from custom Hooks` (we’ll learn about them on the next page).
 
-        <button onClick={this.incrementarContador}>Incrementar</button>
+## 2. ESLint Plugin
 
-      </div>
+React team released an `ESLint plugin` called `eslint-plugin-react-hooks` that enforces these two rules. You can add this plugin to your project if you’d like to try it:
 
-    );
-
-  }
-
-}
-
-En resumen, las props son utilizadas para pasar datos de un componente padre a un componente hijo de manera unidireccional y son inmutables, mientras que el state es utilizado para gestionar y almacenar información interna en un componente, permitiendo que dicho componente actualice y controle su propio estado a lo largo del tiempo.
-
-En React, props y state son dos conceptos distintos, pero a menudo trabajan juntos para permitir que los componentes se comuniquen y gestionen su estado de manera efectiva.
-
-Relación entre props y state:
-
-1. Pasando datos con props: Los componentes padres pueden pasar información a sus componentes hijos a través de props. Estos datos son estáticos y no cambian a menos que el componente padre los actualice.
-
-2. Utilizando datos en state: Los componentes pueden usar state para gestionar información interna que puede cambiar a lo largo del tiempo debido a interacciones del usuario, eventos, etc. El state es específico de un componente y se puede inicializar en su constructor.
-
-Ejemplo realista:
-
-Imaginemos un componente Padre que tiene un contador como parte de su estado y un componente Hijo que muestra ese contador. El contador puede incrementarse mediante un botón en el componente Padre. Vamos a ver cómo props y state interactúan en este escenario.
-
-jsx
-
-import React, { Component } from 'react';
-
-// Componente Hijo
-
-class Hijo extends Component {
-
-  render() {
-
-    return (
-
-      <div>
-
-        <p>Contador recibido como prop: {this.props.contadorProp}</p>
-
-      </div>
-
-    );
-
-  }
-
-}
-
-// Componente Padre
-
-class Padre extends Component {
-
-  constructor(props) {
-
-    super(props);
-
-    this.state = {
-
-      contador: 0
-
-    };
-
-  }
-
-  incrementarContador = () => {
-
-    this.setState({ contador: this.state.contador + 1 });
-
-  }
-
-  render() {
-
-    return (
-
-      <div>
-
-        <h1>Componente Padre</h1>
-
-        <p>Contador en el estado: {this.state.contador}</p>
-
-        <button onClick={this.incrementarContador}>Incrementar</button>
-
-        <hr />
-
-        <h2>Componente Hijo</h2>
-
-        {/* Pasando el contador como prop al componente Hijo */}
-
-        <Hijo contadorProp={this.state.contador} />
-
-      </div>
-
-    );
-
-  }
-
-}
-
-export default Padre;
-
-En este ejemplo, el componente Padre tiene un estado interno (this.state.contador) que puede cambiar a través de la función incrementarContador. Luego, el componente Padre pasa el valor del contador como una prop (contadorProp) al componente Hijo. El componente Hijo recibe esta prop y la utiliza en su renderización.
-
-En resumen, el state se utiliza para gestionar el estado interno de un componente, mientras que las props se utilizan para pasar información de un componente padre a un componente hijo. En este caso, la relación entre props y state permite la comunicación y actualización entre los componentes.
-
-Diríamos que el state es todo el proceso de renderizado - o no renderizado - de un componente en particular.
-
-Los props es un objeto con el valor de los atributos de un componente en un determinado momento (normalmente empaquetados en .json)
-
-[State y diferencia entre Hooks y Classe](https://samarthnehe.medium.com/react-hooks-vs-class-components-c344b59f3bc) (Link)
-
-1.2. Hooks
-
-Dubtes
-
-![](https://lh7-us.googleusercontent.com/VxPXUwk_XJly728PJjXCa7oLzqpY44Ba-R_rTYE3TBbynwk7A-2Wy4oG1ihdvG5Cgpnv4ITINyT49KVWTMgTJvmT_QwIFwJj9gAvjY2v4nkhjRZF5RWJ_zZsPSAQyDOGtqJij90zBHe0eTk5GB7dwyE)
-
-![](https://lh7-us.googleusercontent.com/qRnA8QrVXeOjfUtVpAsq1TETb-TXS6F2hnWK3n_EK7leGlSdQ3hCJp5QiyZcjMknF1jPPm9vrY8rmBPi34YK3zGUUcNW0WWxy5-p4FV6KHWJRPYr2_WyJXJ12UeOu2-fXEgKLrtPR9Ry_tcLKFZvOPE)
-
-no usar nvm ni nodejs (antes mirar la version ofc=¡)
-
-github.com/nvm-sh/nvm
+This plugin is included by default in `Create React App.`
