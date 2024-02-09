@@ -4,19 +4,19 @@
 
 ## Homework :pencil:
 
-- [ ] **Java SE Lab#SE04-01** (revisar el que hem fet i fer replica del que hem fet till now)
+- [ ] ~~**Java SE Lab#SE04-01** (revisar el que hem fet i fer replica del que hem fet till now)~~
 
-- [ ] **React: Adding Interactivity** *(re-read)*
+- [ ] ~~**React: Adding Interactivity** *(re-read)*~~
 
-- [ ] **Create-react-project** React Lab#06-01
+- [x] **Create-react-project** 
 
-- [ ] **ReactJS 18: Rules of Hooks** *(albertprofe.dev)*
+- [x] **ReactJS 18: Rules of Hooks** *(albertprofe.dev)*
 
-- [ ] **ReactJS 18: useState** *(albertprofe.dev)*
+- [x] **ReactJS 18: useState** *(albertprofe.dev)*
 
-- [ ] **Diagrama de secuencias Albert** *(mirar i intentar entendre)*
+- [ ] ~~**Diagrama de secuencias Albert** *(mirar i intentar entendre)*~~
 
-- [ ] **Pasar fotos mobil a apuntes GitHub + Libreta**
+- [x] **Pasar fotos mobil a apuntes GitHub + Libreta**
 
 ## Others :bulb:
 
