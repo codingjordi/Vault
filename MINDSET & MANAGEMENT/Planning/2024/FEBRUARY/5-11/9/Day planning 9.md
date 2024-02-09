@@ -6,9 +6,15 @@
 
 - [ ] **Java SE Lab#SE04-01** (revisar el que hem fet i fer replica del que hem fet till now)
 
+- [ ] **React: Describing the UI** *(re-read)*
+
+- [ ] **React: Describing the UI** *(punto por punto)*
+
+- [ ] **Albertprofe.dev "Props and State"** *(re-read)*
+
 - [ ] **React: Adding Interactivity** *(re-read)*
 
-- [ ] **React: Adding Interactivity** *(punto a punto)*
+- [ ] **React: Adding Interactivity** *(punto por punto)*
 
 - [ ] **Diagrama de secuencias Albert** *(mirar i intentar entendre)*
 
