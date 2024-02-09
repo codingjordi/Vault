@@ -33,8 +33,6 @@ JSX is a JavaScript syntax extension built by Facebook to define a concise and f
 
 7. **Routing**: React Router is a popular library that provides routing capabilities to React applications. It allows developers to define the different routes of the application, and to map each route to a specific component. This makes it possible to create a single-page application with multiple pages and views, without reloading the page.
 
-
-
 ## 1.3 Key-concept: Hooks
 
 In React, Hooks are a new feature introduced in React 16.8 that allows developers to use state and other React features without writing a class. They are designed to make it easier to reuse stateful logic between components, and to better manage side effects in function components.
@@ -131,8 +129,6 @@ These variables are used in the JSX code of the component to render the current 
 - If you’re building a **static content-oriented website**, try `Gatsby`.
 - If you’re building a component library or integrating with an existing codebase, try [More Flexible Toolchains](https://reactjs.org/docs/create-a-new-react-app.html#more-flexible-toolchains).
 
-
-
 ## What is a Hook?
 
 ## 1 Overview
@@ -145,7 +141,7 @@ These variables are used in the JSX code of the component to render the current 
 
 Instead, always use Hooks at the top level of your React function, before any early returns.
 
-By following this rule, you ensure that Hooks are called in the same order each time a component renders.
+**By following this rule, you ensure that Hooks are called in the same order each time a component renders.**
 
 That’s what allows React to correctly preserve the state of Hooks between multiple useState and useEffect calls.
 
@@ -154,8 +150,7 @@ That’s what allows React to correctly preserve the state of Hooks between mult
 > Don’t call Hooks from regular JavaScript functions. Instead, you can:    
 
 - Call `Hooks` **from React function components**.
-  
-  
+
 - Call `Hooks` `from custom Hooks` (we’ll learn about them on the next page).
 
 ## 2. ESLint Plugin
@@ -163,3 +158,152 @@ That’s what allows React to correctly preserve the state of Hooks between mult
 React team released an `ESLint plugin` called `eslint-plugin-react-hooks` that enforces these two rules. You can add this plugin to your project if you’d like to try it:
 
 This plugin is included by default in `Create React App.`
+
+## 3 Cheatsheet by @_georgemoller
+
+[![Hooks: useState, useReducer, useContext](/home/jordi/MyProjects/REACT/Notes/img/IMG_0931.JPG)](https://albertprofe.dev/images/reactjs/IMG_0931.JPG "Hooks: useState, useReducer, useContext")
+
+Hooks: useState, useReducer, useContext
+
+[![Hooks: useEffect, useLayoutEffect](/home/jordi/MyProjects/REACT/Notes/img/IMG_0932.JPG)](https://albertprofe.dev/images/reactjs/IMG_0932.JPG "Hooks: useEffect, useLayoutEffect")
+
+Hooks: useEffect, useLayoutEffect
+
+[    ![Hooks: useInsertionEffect, useSyncExternalStore](/home/jordi/MyProjects/REACT/Notes/img/IMG_0933.JPG)](https://albertprofe.dev/images/reactjs/IMG_0933.JPG "Hooks: useInsertionEffect, useSyncExternalStore")
+
+Hooks: useInsertionEffect, useSyncExternalStore
+
+[![Hooks: useCallback, useMemo](/home/jordi/MyProjects/REACT/Notes/img/IMG_0934.JPG)](https://albertprofe.dev/images/reactjs/IMG_0934.JPG "Hooks: useCallback, useMemo")
+
+Hooks: useCallback, useMemo
+
+[![Hooks: useRef, useImperativeHandle](/home/jordi/MyProjects/REACT/Notes/img/IMG_0935.JPG)](https://albertprofe.dev/images/reactjs/IMG_0935.JPG "Hooks: useRef, useImperativeHandle")
+
+Hooks: useRef, useImperativeHandle
+
+[![Hooks: useId, useDebugValue](/home/jordi/MyProjects/REACT/Notes/img/IMG_0936.JPG)](https://albertprofe.dev/images/reactjs/IMG_0936.JPG "Hooks: useId, useDebugValue")
+
+Hooks: useId, useDebugValue
+
+[![loading-ag-312](/home/jordi/MyProjects/REACT/Notes/img/IMG_0937.JPG)](https://albertprofe.dev/images/reactjs/IMG_0937.JPG "Hooks: useEvents, useDeferredValue, useTransition")
+
+Hooks: useEvents, useDeferredValue, useTransition    
+
+
+
+## Rendering Lists in React
+
+You will often want to display multiple similar components from a collection of data. You can use the [JavaScript array methods](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array#) to manipulate an array of data. On this page, you’ll use [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) and [`map()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map) with React to filter and transform your array of data into an array of components.
+
+
+
+1. **Move** the data into an array:
+
+```jsx
+const people = [  
+    'Creola Katherine Johnson: mathematician',  
+    'Mario José Molina-Pasquel Henríquez: chemist',  
+    'Mohammad Abdus Salam: physicist',  
+    'Percy Lavon Julian: chemist',  
+    'Subrahmanyan Chandrasekhar: astrophysicist'
+];
+```
+
+2. **Map** the `people` members into a new array of JSX nodes, `listItems`:
+
+```jsx
+const listItems = people.map(person => <li>{person}</li>);
+```
+
+3. **Return** `listItems` from your component wrapped in a `<ul>`:
+
+```jsx
+return <ul>{listItems}</ul>;
+```
+
+---
+
+Here is the example code:
+
+```jsx
+import { people } from './data.js';
+import { getImageUrl } from './utils.js';
+
+export default function List() {
+  const chemists = people.filter(person =>
+    person.profession === 'chemist'
+  );
+  const listItems = chemists.map(person =>
+    <li>
+      <img
+        src={getImageUrl(person)}
+        alt={person.name}
+      />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  );
+  return <ul>{listItems}</ul>;
+}
+```
+
+**<u>The render would be the following</u>**:
+
+<img title="" src="file:///home/jordi/MyProjects/REACT/Notes/img/2024-02-09_09-49.png" alt="" data-align="center" width="278">
+
+
+
+### Filtering arrays of items
+
+This data can be structured even more.
+
+```
+const people = [{  id: 0,  name: 'Creola Katherine Johnson',  profession: 'mathematician',}, {  id: 1,  name: 'Mario José Molina-Pasquel Henríquez',  profession: 'chemist',}, {  id: 2,  name: 'Mohammad Abdus Salam',  profession: 'physicist',}, {  name: 'Percy Lavon Julian',  profession: 'chemist',  }, {  name: 'Subrahmanyan Chandrasekhar',  profession: 'astrophysicist',}];
+```
+
+Let’s say you want a way to only show people whose profession is `'chemist'`. You can use JavaScript’s `filter()` method to return just those people. This method takes an array of items, passes them through a “test” (a function that returns `true` or `false`), and returns a new array of only those items that passed the test (returned `true`).
+
+You only want the items where `profession` is `'chemist'`. The “test” function for this looks like `(person) => person.profession === 'chemist'`. Here’s how to put it together:
+
+1. **Create** a new array of just “chemist” people, `chemists`, by calling `filter()` on the `people` filtering by `person.profession === 'chemist'`:
+
+```jsx
+const chemists = people.filter(person =>  person.profession === 'chemist');
+```
+
+2. Now **map** over `chemists`:
+
+```jsx
+const listItems = chemists.map(person =>  <li>     <img       src={getImageUrl(person)}       alt={person.name}     />     <p>       <b>{person.name}:</b>       {' ' + person.profession + ' '}       known for {person.accomplishment}     </p>  </li>);
+```
+
+3. Lastly, **return** the `listItems` from your component:
+
+```jsx
+return <ul>{listItems}</ul>;
+```
+
+
+
+## :bulb: Keeping list items in order with `key`
+
+Notice that all the sandboxes above show an error in the console:
+
+Console
+
+Warning: Each child in a list should have a unique “key” prop.
+
+You need to give each array item a `key` — a string or a number that uniquely identifies it among other items in that array:
+
+```jsx
+<li key={person.id}>...</li>
+```
+
+### :book: Note!
+
+> **JSX elements directly inside a `map()` call always need keys!**
+
+Keys tell React which array item each component corresponds to, so that it can match them up later. This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted. A well-chosen `key` helps React infer what exactly has happened, and make the correct updates to the DOM tree.
