@@ -189,13 +189,9 @@ Hooks: useId, useDebugValue
 
 Hooks: useEvents, useDeferredValue, useTransition    
 
-
-
 ## Rendering Lists in React
 
 You will often want to display multiple similar components from a collection of data. You can use the [JavaScript array methods](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array#) to manipulate an array of data. On this page, you’ll use [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) and [`map()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map) with React to filter and transform your array of data into an array of components.
-
-
 
 1. **Move** the data into an array:
 
@@ -254,8 +250,6 @@ export default function List() {
 
 <img title="" src="file:///home/jordi/MyProjects/REACT/Notes/img/2024-02-09_09-49.png" alt="" data-align="center" width="278">
 
-
-
 ### Filtering arrays of items
 
 This data can be structured even more.
@@ -285,8 +279,6 @@ const listItems = chemists.map(person =>  <li>     <img       src={getImageUrl(p
 ```jsx
 return <ul>{listItems}</ul>;
 ```
-
-
 
 ## :bulb: Keeping list items in order with `key`
 
