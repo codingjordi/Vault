@@ -4,33 +4,33 @@
 
 ## Homework :pencil:
 
-- [ ] **Java SE Lab#SE04-01** (revisar el que hem fet i fer replica del que hem fet till now)
+- [ ] ~~**Java SE Lab#SE04-01** (revisar el que hem fet i fer replica del que hem fet till now)~~
 
-- [ ] **React: Describing the UI** *(re-read)*
+- [x] **React: Describing the UI** *(re-read)*
 
-- [ ] **React: Describing the UI** *(punto por punto)*
+- [ ] ~~**React: Describing the UI** *(punto por punto)*~~
 
-- [ ] **Albertprofe.dev "Props and State"** *(re-read)*
+- [ ] ~~**Albertprofe.dev "Props and State"** *(re-read)*~~
 
-- [ ] **React: Adding Interactivity** *(re-read)*
+- [ ] ~~**React: Adding Interactivity** *(re-read)*~~
 
-- [ ] **React: Adding Interactivity** *(punto por punto)*
+- [ ] ~~**React: Adding Interactivity** *(punto por punto)*~~
 
-- [ ] **Diagrama de secuencias Albert** *(mirar i intentar entendre)*
+- [ ] ~~**Diagrama de secuencias Albert** *(mirar i intentar entendre)*~~
 
-- [ ] **React ES&: .filter()**
+- [ ] ~~**React ES&: .filter()**~~
 
-- [ ] **React ES&: .map()**
+- [ ] ~~**React ES&: .map()**~~
 
-- [ ] **Ejercicios .map() y .filter()** *(Rendering Lists - Describing the UI)*
+- [ ] ~~**Ejercicios .map() y .filter()** *(Rendering Lists - Describing the UI)*~~
 
-- [ ] **React: JavaScript in JSX with Curly Braces**
+- [ ] ~~**React: JavaScript in JSX with Curly Braces**~~
 
-- [ ] **React: Describing the UI** *(re-read)*
+- [ ] ~~**React: Describing the UI** *(re-read)~~*
 
 ## Others :bulb:
 
-+ [ ] **MOOC**
++ [x] **MOOC**
 
 + [ ] **The Programmer Dictionary** (revisar llibreta i afegir algun concepte mes i alguna definicio)
 - [ ] **Tutorial Git**
@@ -41,4 +41,4 @@
 
 - [ ] **Sprint Backlog: 31/01/2024** (*preparar la classe de React*)
 
-- [ ] **Modify plan if needed :smile:**
+- [x] **Modify plan if needed :smile:**
