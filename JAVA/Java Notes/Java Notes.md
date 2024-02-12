@@ -20,8 +20,6 @@ When you create an object, you are creating an **instance of a class**, which is
 
 Each object has its own unique identity, and it maintains its own state by storing the values a of its attributes.
 
-
-
 #### :bulb:Entity vs Functional classes
 
 ![](/home/jordi/MyProjects/JAVA/Java%20Notes/img/image0(1).jpeg)
@@ -123,6 +121,18 @@ In other words, the `static` modifier indicates that the class or class member i
 | Can access both static and non-static fields and methods of the class, allowing it to use the satate of an object to determine its behavior     | Can only be called on an instance of the class, so you need to create an object of a class before using the method                                |
 | Are associated with an instance of the class, so they can use the information that is unique to each object                                     | Can cause confusion when working with non-static methods because it could be called on different instances, which could cause unexpected behavior |
 | Object-oriented design principles promote the use of `non-static` methods because they can be overridden by subclasses to change their behavior |                                                                                                                                                   |
+
+## Java UML *Sequence diagram*
+
+<img src="file:///home/jordi/MyProjects/JAVA/Java%20Notes/img/2024-02-12_16-23.png" title="" alt="" data-align="left">
+
+## Java UML *Flow diagram*
+
+<img title="" src="file:///home/jordi/MyProjects/JAVA/Java%20Notes/img/healthyFood-createMenu-fluxExecution-v0.2.png" alt="" data-align="center">
+
+<u>Step by step</u>
+
+<img src="file:///home/jordi/MyProjects/JAVA/Java%20Notes/img/healthyFood-createMenu-fluxExecution-v0.2-steps%20.png" title="" alt="" data-align="center">
 
 ---
 
