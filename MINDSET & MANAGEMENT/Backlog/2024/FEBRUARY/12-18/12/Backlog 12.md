@@ -1,4 +1,4 @@
-# Backlog *(09-02-2024)* :pen:
+# Backlog *(12-02-2024)* :pen:
 
 ## Accomplishments :chart_with_upwards_trend:
 
@@ -6,5 +6,3 @@
 
 - **Diagrama de fluxe Albert** => *posat a apunts i entés*
 + **MOOC** => 2 ejercicios hechos (10 y 11 part 5, creo)
-  
-  
