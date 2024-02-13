@@ -27,8 +27,8 @@
 
 - [ ] **React** (mirar exercicis tinc a la llibreta que em va dir l'Albert, *web oficial React*)
 
-- [ ] **Take notes**
+- [x] **Take notes**
 
-- [ ] **Sprint Backlog: 31/01/2024** (*preparar la classe de React*)
+- [x] **Sprint Backlog: 31/01/2024** (*preparar la classe de React*)
 
-- [ ] **Modify plan if needed :smile:**
+- [x] **Modify plan if needed :smile:**
