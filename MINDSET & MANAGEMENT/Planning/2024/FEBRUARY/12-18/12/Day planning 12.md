@@ -20,7 +20,7 @@
 
 ## Others :bulb:
 
-+ [ ] **MOOC**
++ [x] **MOOC**
 
 + [ ] **The Programmer Dictionary** (revisar llibreta i afegir algun concepte mes i alguna definicio)
 - [ ] **Tutorial Git**
