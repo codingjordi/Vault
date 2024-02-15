@@ -138,6 +138,108 @@ In other words, the `static` modifier indicates that the class or class member i
 
 ---
 
+# Java SE: Coupling and DDD
+
+
+
+📘 **Coupling/coherence**
+
+**Coupling** refers to the degree to which one class or module depends on another class or module.
+
+**High/tight coupling** means that one class or module depends heavily on another class or module, while **low/loose coupling** means that one class or module has minimal dependencies on other classes or modules.
+
+**Coupling** refers to the degree of dependence, **decoupling**, on the other hand, refers to the process of reducing the degree of coupling between different classes or modules in a system. By decoupling classes or modules, you can make the system **more modular, scalable, flexible, and maintainable**.
+
+Coupling and decoupling are fundamental in modern Java applied to **microservices**.
+
+### 1. Key-concept
+
+The **importance of decoupling** in Java lies in its ability to improve the modularity, flexibility, and maintainability of a system. When classes or modules are highly coupled, changes to one class or module can have a cascading effect on other classes or modules, which can make the system difficult to modify and maintain. By decoupling classes or modules, you can **reduce** the dependencies between them, which can make the system more modular and easier to modify and maintain.
+
+<img title="" src="file:///home/jordi/MyProjects/JAVA/Java%20Notes/img/coupling.png" alt="" data-align="center" width="305">
+
+Additionally, decoupling can help to improve the reusability of classes or modules. When classes or modules are highly coupled, it can be difficult to reuse them in other contexts or situations. By **decoupling** classes or modules, you can make them more self-contained and independent, which can make them more easily reusable in other contexts.
+
+### 2 What is the Domain? DDD?
+
+To define [domain-driven design](https://martinfowler.com/bliki/DomainDrivenDesign.html), we should first establish what we mean by **domain** in this context (and in development in general).
+
+The standard dictionary definition of domain is: “**A sphere of knowledge or activity.**”
+Drilling down a bit from that, the domain in software engineering commonly refers to the subject area on which the application is intended to apply.
+
+In other words, during application development, the domain is the **sphere of knowledge and activity around which the application logic revolves**.
+
+### 2.1 Ubiquitous Language
+
+**Ubiquitous Language** is the term **Eric Evans** uses in `Domain Driven Design` for **the practice of building up a common, rigorous language between developers and users**.
+
+This [language](https://martinfowler.com/bliki/UbiquitousLanguage.html) should be based on the Domain Model used in the software - hence the 
+need for it to be rigorous, since software doesn’t cope well with ambiguity.
+
+### 2.2 Extreme Programming (XP)
+
+**Extreme Programming (XP)** is a [software development methodology developed](https://martinfowler.com/bliki/ExtremeProgramming.html) primarily by Kent Beck.
+
+XP was one of the first agile methods, indeed XP was the dominant agile method in the late 90s and early 00s before Scrum became dominant as the noughties passed: XP was the primary catalyst that got attention to agile methods.
+
+### 2.3 Technical debt
+
+Software systems are prone **to the build up of cruft** - [deficiencies in internal quality](https://martinfowler.com/bliki/TechnicalDebt.html) that make it harder than it would ideally be to modify and extend the system further.
+
+### 2.4 Building Blocks
+
+`Domain Driven Design` also defines several high-level concepts that can be used in conjunction with one another to create and modify domain models:
+
+- Entity
+- Value Object
+- Domain Event
+- Aggregate
+- Service
+- Repository
+- Factories
+- Controller
+- Test
+- Manager
+
+### 3. Example: `CarFactory`
+
+Here is an example of decoupling in Java, using a `CarFactory` class to create different types of cars:
+
+**CarFactory.java**
+
+```java
+public class CarFactory {
+    // Private constructor to prevent instantiation
+    private CarFactory() { }
+
+    // Factory method for creating cars
+    public static Car createCar(String type) {
+        switch (type) {
+            case "sedan":
+                return new Sedan("Toyota", "Camry", 2019);
+            case "hatchback":
+                return new Hatchback("Honda", "Fit", 2019);
+            case "suv":
+                return new SUV("Jeep", "Grand Cherokee", 2019);
+            default:
+                throw new IllegalArgumentException("Invalid car type: " + type);
+        }
+    }
+}
+```
+
+In this example, the `CarFactory` class defines a `createCar()` method, which is marked as `public` and `static`. This method is the factory method, which is responsible for creating objects of the `Car` type. The `createCar()` method takes a `type` parameter, which specifies the type of car to create, and returns an instance of the appropriate concrete class.
+
+By decoupling the `CarFactory` class from the code that uses the cars, you can make the code that uses the cars more flexible and reusable. For example, you could define a `CarDriver` class that takes a `Car` object as a parameter, and uses the `Car` object to drive the car. Because the `CarDriver` class doesn’t depend on the `CarFactory` class, you can use the `CarDriver` class to drive any type of car, regardless of how the car was created.
+
+Additionally, by decoupling the `CarFactory` class from the code that uses the cars, you can make the logic for creating the cars more modular and maintainable. For example, if you want to add a new type of car, such as a truck, you can simply add a new `Truck` class that extends the `Car` class, and then update the `CarFactory` class to include logic for creating instances of the `Truck` class. Because the `CarFactory` class is decoupled from the code that uses the cars, you don’t have to change any other code in the system in order to add the new car type.
+
+
+
+---
+
+---
+
 ## Java SE: Maven
 
 ### :book: Dependency Management: Maven
