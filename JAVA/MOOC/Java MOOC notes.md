@@ -1399,8 +1399,6 @@ try (Scanner scanner = new Scanner(Paths.get("file.txt"))) {
 }
 ```
 
-
-
 A file is read from the project root by default ( when new Scanner(Paths.get("file.txt")) is called), i.e., the folder that contains the folder src and the file pom.xml (and possibly other files as well). The contents of this folder can the inspected using the Files-tab in NetBeans.
 
 El uso de try y catch en este código específico está relacionado con la posibilidad de que ocurran excepciones durante la lectura del archivo. En Java, ciertas operaciones pueden arrojar excepciones debido a diversas razones, como errores de lectura, acceso denegado al archivo, falta de permisos, entre otros. El manejo de excepciones es una buena práctica para garantizar que tu programa pueda responder de manera adecuada cuando ocurran problemas durante la ejecución.
@@ -1446,8 +1444,6 @@ try (Scanner scanner = new Scanner(Paths.get("file.txt"))) {
 System.out.println("Total lines: " + lines.size());
 ```
 
-
-
 ***Ejercicio IsItInTheFile Part 4***
 
 ![](https://lh7-us.googleusercontent.com/UEyL6GdBbBmKXjAz9qOT7u6of6WOcY6Ovv0tmtv6YP8OLXIrV9Ta0xPvxWPP1HWjsoz2vMIJBKNioyeQQIEZRWNaGSvvnuxqv-nWDU4yL_yI1ncMzwrdxfrjYfBh4jmJ7nMzK9ruye6txNFRrFmoEdw)
@@ -1482,8 +1478,6 @@ try (Scanner scanner = new Scanner(Paths.get("records.txt"))) {
 
 System.out.println("Total amount of people read: " + people.size());
 ```
-
-
 
 Reading objects from a file is a clear responsibility in and of itself, and should for that reason be isolated into a method.
 
@@ -1920,8 +1914,6 @@ System.out.println(luke);
 Name@4aa298b7
 ```
 
-
-
 In the first example, we create a primitive `int` variable, and the number 10 is stored as its value. When we pass the variable to the `System.out.println` method, the number `10` is printed. In the second example, we create a reference variable called `luke`. A reference to an object is returned by the constructor of the `Name` class when we call it, and this reference is stored as the value of the variable. When we print the variable, we get `Name@4aa298b7` as output. What is causing this?
 
 The method call `System.out.println` prints the value of the variable. The value of a primitive variable is 
@@ -1958,13 +1950,9 @@ System.out.println(luke); // equal to System.out.println(luke.toString());
 Luke
 ```
 
-
-
 ### Primitive Variables
 
 Java has eight different primitive variables. These are: `boolean` (a truth value: either `true` or `false`), `byte` (a byte containing 8 bits, between the values `-128` and `127`), `char` (a 16-bit value representing a single character), `short` (a 16-bit value that represents a small integer, between the values `-32768` and `32767`), `int` (a 32-bit value that represents a medium-sized integer, between the values `-231` and `231-1`), `long` (a 64-bit value that represents a large integer, between values `-263` and `263-1`), `float` (a floating-point number that uses 32 bits), and `double` (a floating-point number that uses 64 bits).
-
-
 
 ## Reference Variables
 
@@ -2039,8 +2027,6 @@ available to us, containing an instance variable 'age'. If we've
 instantiated a person object from the class, we can get our hands on the
  age variable by following the object's reference. The value of this age
  variable can then be changed as needed.
-
-
 
 ## Primitive and Reference Variable as Method Parameters
 
@@ -2121,14 +2107,11 @@ From the perspective of the operating system, a lot more happens when the statem
 
 To add to the above, the `number` variable is technically not a memory location or a container. The value of the variable `number` is an address in memory — information attached to the variable about its type specifies how much data should be retrieved from its address. 
 
-
 As an example, this is 32 bits for an integer.
 
 We'll return to this briefly in the advanced programming course. The topic is dealt with in depth in the Computer Organization course.
 
 You have reached the end of this section
-
-
 
 ## Objects and references *(Part 5-4)*
 
@@ -2353,8 +2336,6 @@ Bad things follow. This could be the first time you have seen the text **NullPoi
 
 We promise that this is not the last time you will encounter the previous  error. When you do, the first step is to look for variables whose value could be `null`. Fortunately, the error message is useful: it tells which row caused the error. Try it out yourself!
 
-
-
 ## Object as a method parameter
 
 We have seen both primitive and reference variables act as method parameters. Since objects are reference variables, any type of object can be defined to be a method parameter. Let's take a look at a practical demonstration.
@@ -2445,8 +2426,6 @@ Jasper may not enter the ride
 Water track, minimum height: 140
 ```
 
-
-
 ***What if we wanted to know how many people have taken the ride?***
 
 Let's add an object variable to the amusement park ride. It keeps track of the number of people that were permitted to enter.
@@ -2516,8 +2495,6 @@ Matt may enter the ride Jasper may not enter the ride Water track,
 minimum height: 140, visitors: 1.
 ```
 
-
-
 ##### Assisted creation of constructors, getters, and setters
 
 Development environments can help the programmer. If you have created object variables for a class, creating constructors, getters, and setters can be done almost automatically.
@@ -2526,7 +2503,535 @@ Go inside the code block of the class, but outside of all the methods, and simul
 
 On some Linux machines, like on the ones on the Kumpula campus (University of Helsinki), this feature is triggered by simultaneously pressing ctrl, alt, and space.
 
+## Object as object variable
+
+Objects may contain references to objects.
+
+Let's keep working with people, and add a birthday to the person class. A natural way of representing a birthday is to use a `Date` class. We could use the classname `Date`, but for the sake of avoiding confusion with the [similarly named existing Java class](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html), we will use `SimpleDate` here.
+
+```java
+public class SimpleDate {
+    private int day;
+    private int month;
+    private int year;
+
+    public SimpleDate(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+
+    public int getDay() {
+        return this.day;
+    }
+
+    public int getMonth() {
+        return this.month;
+    }
+
+    public int getYear() {
+        return this.year;
+    }
+
+    @Override
+    public String toString() {
+        return this.day + "." + this.month + "." + this.year;
+    }
+}
+```
+
+Since we 
+know the birthday, there is no need to store that age of a person as a 
+separate object variable. The age of the person can be inferred from 
+their birthday. Let's assume that the class `Person` now has the following variables.
+
+```java
+public class Person {
+    private String name;
+    private SimpleDate birthday;
+    private int weight = 0;
+    private int length = 0;
+
+// ...
+```
+
+Let's create a new Person constructor that allows for setting the birthday:
+
+```java
+public Person(String name, SimpleDate date) {
+    this.name = name;
+    this.birthday = date;
+}
+```
+
+Along with the constructor above, we could give Person another constructor where the birthday was given as integers.
+
+```java
+public Person(String name, int day, int month, int year) {
+    this.name = name;
+    this.birthday = new SimpleDate(day, month, year);
+}
+```
+
+The 
+constructor receives as parameters the different parts of the date (day,
+ month, year). They are used to create a date object, and finally the 
+reference to that date is copied as the value of the object variable `birthday`.
+
+Let's modify the `toString` method of the Person class so that instead of age, the method returns the birthday:
+
+```java
+public String toString() {
+    return this.name + ", born on " + this.birthday;
+}
+```
+
+Let's see how the updated Person class works.
+
+```java
+SimpleDate date = new SimpleDate(1, 1, 780);
+Person muhammad = new Person("Muhammad ibn Musa al-Khwarizmi", date);
+Person pascal = new Person("Blaise Pascal", 19, 6, 1623);
+
+System.out.println(muhammad);
+System.out.println(pascal);
+```
+
+Sample output
+
+Muhammad ibn Musa al-Khwarizmi, born on 1.1.780
+Blaise Pascal, born on 19.6.1623
+
+Now a person object has object variables `name` and `birthday`. The variable `name` is a string, which itself is an object; the variable `birthday` is a SimpleDate object.
+
+Both
+ variables contain a reference to an object. Therefore a person object 
+contains two references. In the image below, weight and height are not 
+considered at all.
+
+  [![muhammad ja pascal](https://java-programming.mooc.fi/static/c3326bcadd155188d7a9c2571ed2f4aa/e9131/muhammad-ja-pascal.png "muhammad ja pascal")](https://java-programming.mooc.fi/static/c3326bcadd155188d7a9c2571ed2f4aa/e9131/muhammad-ja-pascal.png)
+
+So the main program is connected to two Person objects by 
+strands. A person has a name and a birthday. Since both variables are 
+objects, these attributes exist at the other ends of the strands.
+
+Birthday appears to be a good extension to the Person class. Earlier we noted that the object variable `age` can be calculated with birthday, so it was removed.
+
+### Date in Java programs
+
+In the section above, we use our own class `SimpleDate` to represent date, because it is suitable for illustrating and 
+practising the operation of objects. If you want to handle dates in your
+ own programs, it's worth reading about the premade Java class [LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html). It contains a significant amount of functionality that can be used to handle dates.
+
+For example, the current date can be used with the existing `LocalDate` class in the following manner:
+
+```java
+import java.time.LocalDate;
+
+public class Example {
+
+    public static void main(String[] args) {
+
+        LocalDate now = LocalDate.now();
+        int year = now.getYear();
+        int month = now.getMonthValue();
+        int day = now.getDayOfMonth();
+
+        System.out.println("today is  " + day + "." + month + "." + year);
+
+    }
+}
+```
+
+## Object of same type as method parameter
+
+We will continue working with the `Person` class. We recall that persons know their birthdays:
+
+```java
+public class Person {
+
+    private String name;
+    private SimpleDate birthday;
+    private int height;
+    private int weight;
+
+    // ...
+}
+```
+
+We would 
+like to compare the ages of two people. The comparison can be done in 
+multiple ways. We could, for instance, implement a method called `public int ageAsYears()` for the Person class; in that case, the comparison would happen in the following manner:
+
+```java
+Person muhammad = new Person("Muhammad ibn Musa al-Khwarizmi", 1, 1, 780);
+Person pascal = new Person("Blaise Pascal", 19, 6, 1623);
+
+if (muhammad.ageAsYears() > pascal.ageAsYears()) {
+    System.out.println(muhammad.getName() + " is older than " + pascal.getName());
+}
+```
+
+We are now going to learn a more "object-oriented" way to compare the ages of people.
+
+We are going to create a new method `boolean olderThan(Person compared)` for the Person class. It can be used to compare a certain person object
+ to the person supplied as the parameter based on their ages.
+
+The method is meant to be used like this:
+
+```java
+Person muhammad = new Person("Muhammad ibn Musa al-Khwarizmi", 1, 1, 780);
+Person pascal = new Person("Blaise Pascal", 19, 6, 1623);
+
+if (muhammad.olderThan(pascal)) {  //  same as muhammad.olderThan(pascal)==true
+    System.out.println(muhammad.getName() + " is older than " + pascal.getName());
+} else {
+    System.out.println(muhammad.getName() + " is not older than " + pascal.getName());
+}
+```
+
+The program above asks if al-Khwarizmi is older than Pascal. The method `olderThan` returns `true` if the object that is used to call the method (`object.olderThan(objectGivenAsParameter)`) is older than the object given as the parameter, and `false` otherwise.
+
+In practice, we call the `olderThan` method of the object that matches "Muhammad ibn Musa al-Khwarizmi", which is referred to by the variable `muhammad`. The reference `pascal`, matching the object "Blaise Pascal", is given as the parameter to that method.
+
+The program prints:
+
+Sample output
+
+Muhammad ibn Musa al-Khwarizmi is older than Blaise Pascal
+
+The method `olderThan` receives a person object as its parameter. More precisely, the variable
+ that is defined as the method parameter receives a copy of the value 
+contained by the given variable. That value is a reference to an object,
+ in this case.
+
+The implementation of the method is illustrated below. Note that the **method may return a value in more than one place** — here the comparison has been divided into multiple parts based on the years, the months, and the days:
+
+```java
+public class Person {
+    // ...
+
+    public boolean olderThan(Person compared) {
+        // 1. First compare years
+        int ownYear = this.getBirthday().getYear();
+        int comparedYear = compared.getBirthday().getYear();
+
+        if (ownYear < comparedYear) {
+            return true;
+        }
+
+        if (ownYear > comparedYear) {
+            return false;
+        }
+
+        // 2. Same birthyear, compare months
+        int ownMonth = this.getBirthday().getMonth();
+        int comparedMonth = compared.getBirthday().getMonth();
+
+        if (ownMonth < comparedMonth) {
+            return true;
+        }
+
+        if (ownMonth > comparedMonth) {
+            return false;
+        }
+
+        // 3. Same birth year and month, compare days
+        int ownDay = this.getBirthday().getDay();
+        int comparedDay = compared.getBirthday().getDay();
+
+        if (ownDay < comparedDay) {
+            return true;
+        }
+
+        return false;
+    }
+}
+```
+
+Let's 
+pause for a moment to consider abstraction, one of the principles of 
+object-oriented programming. The idea behind abstraction is to 
+conceptualize the programming code so that each concept has its own 
+clear responsibilities. When viewing the solution above, however, we 
+notice that the comparison functionality would be better placed inside 
+the `SimpleDate` class instead of the `Person` class.
+
+We'll create a method called `public boolean before(SimpleDate compared)` for the class `SimpleDate`. The method returns the value `true` if the date given as the parameter is after (or on the same day as) the date of the object whose method is called.
+
+```java
+public class SimpleDate {
+    private int day;
+    private int month;
+    private int year;
+
+    public SimpleDate(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+
+    public String toString() {
+        return this.day + "." + this.month + "." + this.year;
+    }
+
+    // used to check if this date object (`this`) is before
+    // the date object given as the parameter (`compared`)
+    public boolean before(SimpleDate compared) {
+        // first compare years
+        if (this.year < compared.year) {
+            return true;
+        }
+
+        if (this.year > compared.year) {
+            return false;
+        }
+
+        // years are same, compare months
+        if (this.month < compared.month) {
+            return true;
+        }
+
+        if (this.month > compared.month) {
+            return false;
+        }
+
+        // years and months are same, compare days
+        if (this.day < compared.day) {
+            return true;
+        }
+
+        return false;
+    }
+}
+```
+
+Even though the object variables `year`, `month`, and `day` are encapsulated (`private`) object variables, we can read their values by writing `compared.*variableName*`. This is because a `private` variable can be accessed from all the methods contained by that class. 
+Notice that the syntax here matches calling some object method. Unlike 
+when calling a method, we refer to a field of an object, so the 
+parentheses that indicate a method call are not written.
+
+An example of how to use the method:
+
+```java
+public static void main(String[] args) {
+    SimpleDate d1 = new SimpleDate(14, 2, 2011);
+    SimpleDate d2 = new SimpleDate(21, 2, 2011);
+    SimpleDate d3 = new SimpleDate(1, 3, 2011);
+    SimpleDate d4 = new SimpleDate(31, 12, 2010);
+
+    System.out.println(d1 + " is earlier than " + d2 + ": " + d1.before(d2));
+    System.out.println(d2 + " is earlier than " + d1 + ": " + d2.before(d1));
+
+    System.out.println(d2 + " is earlier than " + d3 + ": " + d2.before(d3));
+    System.out.println(d3 + " is earlier than " + d2 + ": " + d3.before(d2));
+
+    System.out.println(d4 + " is earlier than " + d1 + ": " + d4.before(d1));
+    System.out.println(d1 + " is earlier than " + d4 + ": " + d1.before(d4));
+}
+```
+
+Sample output
+
+14.2.2011 is earlier than 21.2.2011: true
+21.2.2011 is earlier than 14.2.2011: false
+21.2.2011 is earlier than 1.3.2011: true
+1.3.2011 is earlier than 21.2.2011: false
+31.12.2010 is earlier than 14.2.2011: true
+14.2.2011 is earlier than 31.12.2010: false
+
+Let's 
+tweak the method olderThan of the Person class so that from here on out,
+ we take use of the comparison functionality that date objects provide.
+
+```java
+public class Person {
+    // ...
+
+    public boolean olderThan(Person compared) {
+        if (this.birthday.before(compared.getBirthday())) {
+            return true;
+        }
+
+        return false;
+
+        // or return more directly:
+        // return this.birthday.before(compared.getBirthday());
+    }
+}
+```
+
+Now the concrete comparison of dates is implemented in the class that it logically (based on the class names) belongs to.
+
 ---
+
+---
+
+## Comparing the equality of objects (equals)
+
+While working with strings, we learned that strings must be compared using the `equals` method. This is how it's done.
+
+```java
+Scanner scanner = new Scanner(System.in);
+
+System.out.println("Enter two words, each on its own line.")
+String first = scanner.nextLine();
+String second = scanner.nextLine();
+
+if (first.equals(second)) {
+    System.out.println("The words were the same.");
+} else {
+    System.out.println("The words were not the same.");
+}
+```
+
+With primitive variables such as `int`, comparing two variables can be done with two equality signs. This is because the value of a primitive variable is stored directly in the "variable's box". The value of reference variables, in contrast, is an address of the object that is referenced; so the "box" contains a reference to the memory location. Using two equality signs compares the equality of the values stored in the "boxes of the variables" — with reference variables, such comparisons would examine the equality of the memory references.
+
+The method `equals` is similar to the method `toString` in the respect that it is available for use even if it has not been defined in the class. The default implementation of this method compares the equality of the references. Let's observe this with the help of the previously written `SimpleDate` class.
+
+```java
+SimpleDate first = new SimpleDate(1, 1, 2000);
+SimpleDate second = new SimpleDate(1, 1, 2000);
+SimpleDate third = new SimpleDate(12, 12, 2012);
+SimpleDate fourth = first;
+
+if (first.equals(first)) {
+    System.out.println("Variables first and first are equal");
+} else {
+    System.out.println("Variables first and first are not equal");
+}
+
+if (first.equals(second)) {
+    System.out.println("Variables first and second are equal");
+} else {
+    System.out.println("Variables first and second are not equal");
+}
+
+if (first.equals(third)) {
+    System.out.println("Variables first and third are equal");
+} else {
+    System.out.println("Variables first and third are not equal");
+}
+
+if (first.equals(fourth)) {
+    System.out.println("Variables first and fourth are equal");
+} else {
+    System.out.println("Variables first and fourth are not equal");
+}
+```
+
+Sample output
+
+Variables first and first are equal
+Variables first and second are not equal
+Variables first and third are not equal
+Variables first and fourth are equal
+
+There is a problem with the program above. Even though two dates (first and second) have exactly the same values for object variables, they are different from each other from the point of view of the default `equals` method.
+
+If we want to be able to compare two objects of our own design with the `equals` method, that method must be defined in the class. The method `equals` is defined as a method that returns a boolean type value — the return value indicates whether the objects are equal.
+
+The `equals` method is implemented in such a way that it can be used to compare the current object with any other object. The method receives an `Object`-type object as its single parameter — all objects are `Object`-type, in addition to their own type. The `equals` method first compares if the addresses are equal: if so, the objects are equal. After this, we examine if the types of the objects are the same: if not, the objects are not equal. Next, the `Object`-type object passed as the parameter is converted to the type of the object that is being examined by using a type cast, so that the values of the object variables can be compared. Below the equality comparison has been implemented for the SimpleDate class.
+
+```java
+public class SimpleDate {
+    private int day;
+    private int month;
+    private int year;
+
+    public SimpleDate(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+
+    public int getDay() {
+        return this.day;
+    }
+
+    public int getMonth() {
+        return this.month;
+    }
+
+    public int getYear() {
+        return this.year;
+    }
+
+    public boolean equals(Object compared) {
+        // if the variables are located in the same position, they are equal
+        if (this == compared) {
+            return true;
+        }
+
+        // if the type of the compared object is not SimpleDate, the objects are not equal
+        if (!(compared instanceof SimpleDate)) {
+            return false;
+        }
+
+        // convert the Object type compared object
+        // into a SimpleDate type object called comparedSimpleDate
+        SimpleDate comparedSimpleDate = (SimpleDate) compared;
+
+        // if the values of the object variables are the same, the objects are equal
+        if (this.day == comparedSimpleDate.day &&
+            this.month == comparedSimpleDate.month &&
+            this.year == comparedSimpleDate.year) {
+            return true;
+        }
+
+        // otherwise the objects are not equal
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return this.day + "." + this.month + "." + this.year;
+    }
+}
+```
+
+Building a similar comparison functionality is possible for Person objects too. Below, the comparison has been implemented for Person objects that don't have a separate SimpleDate object. Notice that the names of people are strings (i.e. objects), so we use the `equals` method for comparing them.
+
+```java
+public class Person {
+
+    private String name;
+    private int age;
+    private int weight;
+    private int height;
+
+    // constructors and methods
+
+
+    public boolean equals(Object compared) {
+        // if the variables are located in the same position, they are equal
+        if (this == compared) {
+            return true;
+        }
+
+        // if the compared object is not of type Person, the objects are not equal
+        if (!(compared instanceof Person)) {
+            return false;
+        }
+
+        // convert the object into a Person object
+        Person comparedPerson = (Person) compared;
+
+        // if the values of the object variables are equal, the objects are equal
+        if (this.name.equals(comparedPerson.name) &&
+            this.age == comparedPerson.age &&
+            this.weight == comparedPerson.weight &&
+            this.height == comparedPerson.height) {
+            return true;
+        }
+
+        // otherwise the objects are not equal
+        return false;
+    }
+
+    // .. methods
+}
+```
 
 ---
 
@@ -2534,4 +3039,4 @@ VOCABULARIO
 
 PBI product backlog items
 
-PO product owner
+PO product owner 
