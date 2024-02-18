@@ -1,20 +1,28 @@
 # Day Planning :spiral_calendar:
 
-## 13-02-2024
+## 15-02-2024
 
 ## Homework :pencil:
-
-- [x] **Java SE Lab#SE04-01** (Clonar el Hello11 de AlbertProfe)
 
 - [ ] **Java SE Lab#SE04-01** (Fer diagrama de seqüencies de les noves modificacions fetes a clase el 13-02-2024)
 
 - [ ] **React: Describing the UI** *(punto por punto)*
 
-- [ ] **Albertprofe.dev "Props and State"** *(re-read)*
+- [x] **Albertprofe.dev "Props and State"** *(re-read)*
 
 - [ ] **React: Adding Interactivity** *(re-read)*
 
 - [ ] **React: Adding Interactivity** *(punto por punto)*
+
+- [x] **Java SE: Coupling and DDD** *(llegir)*
+
+- [ ] **React JS: Create a React Project** *(pasar a notes i llibreta Project Structure + Tree-folder)*
+
+- [ ] **React JS: EcmaScript 6** *(llegir articles, picnic)*
+
+- [ ] **React JS App: router**
+
+- [ ] **Pasar apuntes pendientes MOOC**
 
 ## Others :bulb:
 
