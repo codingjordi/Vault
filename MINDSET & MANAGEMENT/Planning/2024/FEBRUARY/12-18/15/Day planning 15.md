@@ -8,23 +8,27 @@
 
 - [ ] **React: Describing the UI** *(punto por punto)*
 
-- [ ] **Albertprofe.dev "Props and State"** *(re-read)*
+- [x] **Albertprofe.dev "Props and State"** *(re-read)*
 
 - [ ] **React: Adding Interactivity** *(re-read)*
 
 - [ ] **React: Adding Interactivity** *(punto por punto)*
 
-- [ ] **Java SE: Coupling and DDD** *(llegir)*
+- [x] **Java SE: Coupling and DDD** *(llegir)*
 
 - [ ] **React JS: Create a React Project** *(pasar a notes i llibreta Project Structure + Tree-folder)*
 
-- [ ] ES6 Albertprofe
+- [ ] **React JS: EcmaScript 6** *(llegir articles, picnic)*
 
-- [ ] **React JS App: router**
+- [x] **React JS App: router** *(picnic)*
+
+- [ ] **Pasar apuntes pendientes MOOC**
 
 ## Others :bulb:
 
 + [ ] **MOOC**
+
+- [x] **Kridly's website**
 
 + [ ] **The Programmer Dictionary** (revisar llibreta i afegir algun concepte mes i alguna definicio)
 - [ ] **Tutorial Git**
