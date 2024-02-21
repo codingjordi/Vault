@@ -129,6 +129,10 @@ These variables are used in the JSX code of the component to render the current 
 - If you’re building a **static content-oriented website**, try `Gatsby`.
 - If you’re building a component library or integrating with an existing codebase, try [More Flexible Toolchains](https://reactjs.org/docs/create-a-new-react-app.html#more-flexible-toolchains).
 
+---
+
+---
+
 ## What is a Hook?
 
 ## 1 Overview
@@ -189,6 +193,8 @@ Hooks: useId, useDebugValue
 
 Hooks: useEvents, useDeferredValue, useTransition    
 
+---
+
 ## Rendering Lists in React
 
 You will often want to display multiple similar components from a collection of data. You can use the [JavaScript array methods](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array#) to manipulate an array of data. On this page, you’ll use [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) and [`map()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map) with React to filter and transform your array of data into an array of components.
@@ -222,6 +228,90 @@ return <ul>{listItems}</ul>;
 Here is the example code:
 
 ```jsx
+const people = [
+  'Creola Katherine Johnson: mathematician',
+  'Mario José Molina-Pasquel Henríquez: chemist',
+  'Mohammad Abdus Salam: physicist',
+  'Percy Lavon Julian: chemist',
+  'Subrahmanyan Chandrasekhar: astrophysicist'
+];
+
+export default function List() {
+  const listItems = people.map(person =>
+    <li>{person}</li>
+  );
+  return <ul>{listItems}</ul>;
+}
+```
+
+**<u>The render would be the following</u>**:
+
+> <img title="" src="file:///home/jordi/MyProjects/REACT/Notes/img/2024-02-09_12-06.png" alt="" data-align="center" width="278">
+
+---
+
+### Filtering arrays of items
+
+This data can be structured even more.
+
+```jsx
+const people = [{
+  id: 0,
+  name: 'Creola Katherine Johnson',
+  profession: 'mathematician',
+}, {
+  id: 1,
+  name: 'Mario José Molina-Pasquel Henríquez',
+  profession: 'chemist',
+}, {
+  id: 2,
+  name: 'Mohammad Abdus Salam',
+  profession: 'physicist',
+}, {
+  name: 'Percy Lavon Julian',
+  profession: 'chemist',
+}, {
+  name: 'Subrahmanyan Chandrasekhar',
+  profession: 'astrophysicist',
+}];
+```
+
+Let’s say you want a way to only show people whose profession is `'chemist'`. You can use JavaScript’s `filter()` method to return just those people. This method takes an array of items, passes them through a “test” (a function that returns `true` or `false`), and returns a new array of only those items that passed the test (returned `true`).
+
+You only want the items where `profession` is `'chemist'`. The “test” function for this looks like `(person) => person.profession === 'chemist'`. Here’s how to put it together:
+
+1. **Create** a new array of just “chemist” people, `chemists`, by calling `filter()` on the `people` filtering by `person.profession === 'chemist'`:
+
+```jsx
+const chemists = people.filter(person =>  person.profession === 'chemist');
+```
+
+2. Now **map** over `chemists`:
+
+```jsx
+const listItems = chemists.map(person =>
+  <li>
+     <img
+       src={getImageUrl(person)}
+       alt={person.name}
+     />
+     <p>
+       <b>{person.name}:</b>
+       {' ' + person.profession + ' '}
+       known for {person.accomplishment}
+     </p>
+  </li>);
+```
+
+3. Lastly, **return** the `listItems` from your component:
+
+```jsx
+return <ul>{listItems}</ul>;
+```
+
+Here is the example code:
+
+```jsx
 import { people } from './data.js';
 import { getImageUrl } from './utils.js';
 
@@ -248,37 +338,7 @@ export default function List() {
 
 **<u>The render would be the following</u>**:
 
-<img title="" src="file:///home/jordi/MyProjects/REACT/Notes/img/2024-02-09_09-49.png" alt="" data-align="center" width="278">
-
-### Filtering arrays of items
-
-This data can be structured even more.
-
-```
-const people = [{  id: 0,  name: 'Creola Katherine Johnson',  profession: 'mathematician',}, {  id: 1,  name: 'Mario José Molina-Pasquel Henríquez',  profession: 'chemist',}, {  id: 2,  name: 'Mohammad Abdus Salam',  profession: 'physicist',}, {  name: 'Percy Lavon Julian',  profession: 'chemist',  }, {  name: 'Subrahmanyan Chandrasekhar',  profession: 'astrophysicist',}];
-```
-
-Let’s say you want a way to only show people whose profession is `'chemist'`. You can use JavaScript’s `filter()` method to return just those people. This method takes an array of items, passes them through a “test” (a function that returns `true` or `false`), and returns a new array of only those items that passed the test (returned `true`).
-
-You only want the items where `profession` is `'chemist'`. The “test” function for this looks like `(person) => person.profession === 'chemist'`. Here’s how to put it together:
-
-1. **Create** a new array of just “chemist” people, `chemists`, by calling `filter()` on the `people` filtering by `person.profession === 'chemist'`:
-
-```jsx
-const chemists = people.filter(person =>  person.profession === 'chemist');
-```
-
-2. Now **map** over `chemists`:
-
-```jsx
-const listItems = chemists.map(person =>  <li>     <img       src={getImageUrl(person)}       alt={person.name}     />     <p>       <b>{person.name}:</b>       {' ' + person.profession + ' '}       known for {person.accomplishment}     </p>  </li>);
-```
-
-3. Lastly, **return** the `listItems` from your component:
-
-```jsx
-return <ul>{listItems}</ul>;
-```
+> <img title="" src="file:///home/jordi/MyProjects/REACT/Notes/img/2024-02-09_09-49.png" alt="" data-align="center" width="238">
 
 ## :bulb: Keeping list items in order with `key`
 
