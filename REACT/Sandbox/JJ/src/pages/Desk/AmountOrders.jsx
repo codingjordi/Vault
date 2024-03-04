@@ -8,49 +8,47 @@ import React, { useState, useEffect } from 'react';
 export default function AmountOrders(){
 
     const [cantidadTotalMenusLisbon, setCantidadTotalMenusLisbon] = useState(0);
+    const [cantidadTotalMenusBarcelona, setCantidadTotalMenusBarcelona] = useState(0);
+    const [cantidadTotalMenusSantiago, setCantidadTotalMenusSantiago] = useState(0);
+    const [cantidadTotalMenusGirona, setCantidadTotalMenusGirona] = useState(0);
+    const [cantidadTotalMenusParis, setCantidadTotalMenusParis] = useState(0);
+    const [cantidadTotalMenusBerlin, setCantidadTotalMenusBerlin] = useState(0);
+    const [cantidadTotalMenusLima, setCantidadTotalMenusLima] = useState(0);
+    const [cantidadTotalMenusTokyo, setCantidadTotalMenusTokyo] = useState(0);
+    const [cantidadTotalMenusBristol, setCantidadTotalMenusBristol] = useState(0);
+    const [cantidadTotalMenusMoscova, setCantidadTotalMenusMoscova] = useState(0);
+    const [cantidadTotalMenusNewYork, setCantidadTotalMenusNewYork] = useState(0);
+
     const [showMore, setShowMore] = useState(false);
 
-    function handleMoreClick() {
+    function handleShowMoreClick() {
         setShowMore(!showMore);
     }
 
-    useEffect(() => {
-        const total = ordersDataJSON.reduce((total, order) => {
-            const cantidadMenusLisbon = order.menus.reduce((subTotal, menu) => {
-                return menu.menu === "Lisbon" ? subTotal + menu.qty : subTotal;
-            }, 0);
-            return total + cantidadMenusLisbon;
-        }, 0);
-
-        // Guardamos el valor calculado en el estado
-        setCantidadTotalMenusLisbon(total);
-    }, []); // Asegúrate de que este efecto solo se ejecute una vez ([] como dependencia)
 
     return (
-        <Card>
-            <div class='w3-container'>
-                <h2>Sales</h2>
-                <p className="w3-xlarge"><b>Menus sold: </b>{ordersDataJSON.length}</p>
-                <button className="w3-button w3-red" onClick={handleMoreClick}>{showMore ? 'Hide' : 'Show more'} details</button>
-                { showMore && 
-                    <ul className="">
-                        <li>Lisbon: {cantidadTotalMenusLisbon}</li>
-                        <li>Barcelona: </li>
-                        <li>Santiago: </li>
-                        <li>Girona: </li>
-                        <li>Paris: </li>
-                        <li>Berlin: </li>
-                        <li>Lima: </li>
-                        <li>Tokyo: </li>
-                        <li>Bristol: </li>
-                        <li>Moscova: </li>
-                        <li>New York: </li>
-                    </ul>}
-                
-
-
-            </div>
-        </Card>
+        <div>
+            <Card>
+                    <h2>Sales</h2>
+                    <p className="w3-xlarge"><b>Menus sold: </b>{ordersDataJSON.length}</p>
+                    <button className="w3-button primary-color-button" onClick={handleShowMoreClick}>{showMore ? 'Hide' : 'Show more'} details</button>
+                    { showMore &&
+                        <ul className="ul-primary-color">
+                            <li>Lisbon: <b>{cantidadTotalMenusLisbon}</b></li>
+                            <li>Barcelona: <b>{cantidadTotalMenusBarcelona}</b></li>
+                            <li>Santiago: <b>{cantidadTotalMenusSantiago}</b></li>
+                            <li>Girona: <b>{cantidadTotalMenusGirona}</b></li>
+                            <li>Paris: <b>{cantidadTotalMenusParis}</b></li>
+                            <li>Berlin: <b>{cantidadTotalMenusBerlin}</b></li>
+                            <li>Lima: <b>{cantidadTotalMenusLima}</b></li>
+                            <li>Tokyo: <b>{cantidadTotalMenusTokyo}</b></li>
+                            <li>Bristol: <b>{cantidadTotalMenusBristol}</b></li>
+                            <li>Moscova: <b>{cantidadTotalMenusMoscova}</b></li>
+                            <li>New York:<b>{cantidadTotalMenusNewYork}</b></li>
+                        </ul>
+                    }
+            </Card>
+        </div>
     );
 
 }

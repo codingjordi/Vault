@@ -1,14 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --primary-color: #86090F;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
   font-family: "Inter Tight", sans-serif;
 }
-
-
 
 h1, h2, h3 {
   font-weight: 700;
@@ -22,5 +20,26 @@ h4, h5, h6 {
   background-color: rgb(206, 122, 12);
 }
 
+.primary-color-button {
+  border-radius: 8px;
+  color: white;
+  background-color: #86090f;  
+}
+
+.ul-primary-color {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ul-primary-color li::before {
+
+
+  content: "\2022"; /* Utiliza un punto (•) como marcador de lista */
+  color: #86090f; /* Cambiar el color del marcador de lista a rojo */
+  display: inline-block;
+  width: 1em; /* Espacio entre el marcador y el texto */
+  font-size: 1.1rem;
+  
+}
 
 
