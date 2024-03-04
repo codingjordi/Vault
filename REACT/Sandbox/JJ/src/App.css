@@ -34,12 +34,26 @@ h4, h5, h6 {
 .ul-primary-color li::before {
 
 
-  content: "\2022"; /* Utiliza un punto (•) como marcador de lista */
-  color: #86090f; /* Cambiar el color del marcador de lista a rojo */
+  content: "\2022"; 
+  color: #86090f; 
   display: inline-block;
-  width: 1em; /* Espacio entre el marcador y el texto */
+  width: 1em;
   font-size: 1.1rem;
   
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
 }
 
 
