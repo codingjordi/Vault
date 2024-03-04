@@ -56,4 +56,6 @@ th {
   background-color: #f2f2f2;
 }
 
-
+p {
+  line-height: 1; /* Establece el espacio entre líneas al 150% del tamaño del texto */
+}

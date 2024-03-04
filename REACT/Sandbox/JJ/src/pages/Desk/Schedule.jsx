@@ -31,7 +31,7 @@ export default function Schedule() {
                     <tr>
                         <td>Cindy Nero</td>
                         <td>Full shift</td>
-                        <td>Morning</td>
+                        <td>Morning - Night</td>
                     </tr>
                     <tr>
                         <td>Dolores Jackson</td>
