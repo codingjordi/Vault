@@ -7,6 +7,10 @@ import React, { useState, useEffect } from 'react';
 
 export default function AmountOrders(){
 
+    // No he arribat a conseguir mapejar be les ordreas y conseguir el total cops que han demanat cada menus.
+    // Tambe volia sumar el preu del total de les unitats vengudes de cada un dels menus i fer un grafic.
+    
+
     const [cantidadTotalMenusLisbon, setCantidadTotalMenusLisbon] = useState(0);
     const [cantidadTotalMenusBarcelona, setCantidadTotalMenusBarcelona] = useState(0);
     const [cantidadTotalMenusSantiago, setCantidadTotalMenusSantiago] = useState(0);

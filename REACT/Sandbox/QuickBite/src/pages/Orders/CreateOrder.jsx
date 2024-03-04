@@ -102,7 +102,7 @@ export default function CreateOrder() {
   return (
     <>
       <h1>Orders</h1>
-      <div class="w3-container">
+      <div>
         <div class="w3-row">
           <div class="w3-col m6">
             <div class="w3-panel w3-card-4 w3-sand">

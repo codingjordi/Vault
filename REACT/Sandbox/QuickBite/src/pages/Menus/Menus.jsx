@@ -1,6 +1,8 @@
 import OrderButton from "./OrderButton.jsx";
 import MenuFromData from "./MenuFromData.jsx";
 
+// He intentat de posar l'array dobjectes a un archiu menus.js pero no se per que no puc mapejar l'array un cop importo menu.js
+
 const menus = [
   {
     id: "M001",
@@ -88,7 +90,7 @@ export default function Menus (){
 
     return (
       <>
-        <div class="w3-container">
+        <div class="w3-container w3-section">
           <h1>Menus</h1>
 
           <div class="w3-container">

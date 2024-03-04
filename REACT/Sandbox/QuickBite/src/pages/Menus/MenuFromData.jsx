@@ -5,7 +5,7 @@ export default function MenuFromData({ menu }) {
         <div class="w3-panel w3-card">
           <h3>{menu.name}</h3>
           <span class="w3-sand">{menu.id}</span>
-          <ul style={{paddingLeft: "1rem"}}>
+          <ul>
               <li>{menu.contents[0]}</li>
               <li>{menu.contents[1]}</li>
               <li>{menu.contents[2]}</li>

@@ -29,7 +29,7 @@ export default function Layout () {
               Support
             </Link>
           </div>
-          <img src="https://i.postimg.cc/kGFbXsDQ/logo-Quick-Bite.png" style={{marginBottom: "1rem"}} alt="" />
+          <img src="https://i.postimg.cc/kGFbXsDQ/logo-Quick-Bite.png" style={{marginBottom: "1.6rem"}} alt="" />
         </div>
       </nav>
 
