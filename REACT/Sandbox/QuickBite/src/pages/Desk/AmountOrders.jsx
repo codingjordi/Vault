@@ -34,7 +34,8 @@ export default function AmountOrders(){
         <div>
             <Card>
                     <h2>Sales</h2>
-                    <p className="w3-xlarge"><b>Menus sold: </b>{ordersDataJSON.length}</p>
+                    <p className="w3-xlarge"><b>Sold menus: {ordersDataJSON.length + 42}</b></p>
+                    <p>Sold this month: {ordersDataJSON.length}</p>
                     <button className="w3-button primary-color-button" onClick={handleShowMoreClick}>{showMore ? 'Hide' : 'Show more'} details</button>
                     { showMore &&
                         <ul className="ul-primary-color">

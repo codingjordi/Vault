@@ -172,7 +172,9 @@ export default function CreateOrder() {
                   </s>
                 </div>
                 <br />
-                <button class="w3-button w3-pink" type="submit">
+                <button class="w3-button w3-pink" type="submit" onClick={handleSubmitCreateOrder}>
+                  {/*Aqui m'hagues agradat saber com fer perque es guardés aquesta ordre dins dun archiu JSON o array d'objectes 
+                    i poder veure a temps real com s'afageixen ordres a la 'Order List' d'abaix*/}
                   Submit Order
                 </button>
               </form>

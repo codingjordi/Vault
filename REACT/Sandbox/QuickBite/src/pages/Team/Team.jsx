@@ -17,14 +17,14 @@ export default function Team(){
         <h1 style={{marginBottom: "2rem"}}>QuickBite Team</h1>
         <div style={{display: 'flex', justifyContent: 'space-around'}}>
           <Card>
-            <h3>Working</h3>
+            <h2>Working</h2>
             <div style={{display: "flex", justifyContent: "space-between", gap: "3rem"}}>
               <EmployeeCard employee={employees[0]}></EmployeeCard>
               <EmployeeCard employee={employees[1]}></EmployeeCard>
             </div>
           </Card>
           <Card>
-            <h3>Resting</h3>
+            <h2>Resting</h2>
             <div style={{display: "flex", justifyContent: "space-between",  gap: "3rem"}}>
               <EmployeeCard employee={employees[2]}></EmployeeCard>
               <EmployeeCard employee={employees[3]}></EmployeeCard>
