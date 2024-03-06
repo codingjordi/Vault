@@ -8,11 +8,11 @@
 
 - [x] **Adding Interactivity: Updating Arrays in State** 
 
-- [ ] **React: Adding Interactivity** *(punto por punto)*
+- [ ] ~~**React: Adding Interactivity** *(punto por punto)*~~
 
-- [ ] **React JS App: router** *(re-read)
+- [ ] ~~**React JS App: router** *(re-read)*~~
 
-- [ ] **useImmer** *(picnic)*
+- [ ] ~~**useImmer** *(picnic)*~~
 
 ## Others :bulb:
 
@@ -21,6 +21,6 @@
 + [ ] **The Programmer Dictionary**
 - [ ] **Tutorial Git**
 
-- [ ] **Take notes**
+- [x] **Take notes**
 
-- [ ] **Modify plan if needed :smile:**
+- [x] **Modify plan if needed :smile:**
