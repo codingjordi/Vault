@@ -8,6 +8,8 @@
 
 - [ ] **React: Adding Interactivity** *(punto por punto)*
 
+- [ ] **Clonar Lab#7-1 Traffic Lights** *(estudiar com s'ha fet)*
+
 - [ ] **React JS App: router** *(re-read)*
 
 - [ ] **useEffect** *(picnic)*
