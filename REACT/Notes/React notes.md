@@ -187,11 +187,15 @@ Hooks: useRef, useImperativeHandle
 
 [![Hooks: useId, useDebugValue](/home/jordi/MyProjects/REACT/Notes/img/IMG_0936.JPG)](https://albertprofe.dev/images/reactjs/IMG_0936.JPG "Hooks: useId, useDebugValue")
 
-Hooks: useId, useDebugValue
-
-[![loading-ag-312](/home/jordi/MyProjects/REACT/Notes/img/IMG_0937.JPG)](https://albertprofe.dev/images/reactjs/IMG_0937.JPG "Hooks: useEvents, useDeferredValue, useTransition")
+Hooks: useId, useDebugValue[![loading-ag-312](/home/jordi/MyProjects/REACT/Notes/img/IMG_0937.JPG)](https://albertprofe.dev/images/reactjs/IMG_0937.JPG "Hooks: useEvents, useDeferredValue, useTransition")
 
 Hooks: useEvents, useDeferredValue, useTransition    
+
+---
+
+## Main Hooks
+
+u
 
 ---
 
@@ -359,3 +363,5 @@ You need to give each array item a `key` — a string or a number that uniquely 
 > **JSX elements directly inside a `map()` call always need keys!**
 
 Keys tell React which array item each component corresponds to, so that it can match them up later. This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted. A well-chosen `key` helps React infer what exactly has happened, and make the correct updates to the DOM tree.
+
+## 

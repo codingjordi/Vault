@@ -6,11 +6,31 @@
 
 - [ ] **Adding Interactivity: Updating Arrays in State** *(acabar)*
 
-- [ ] **React: Adding Interactivity** *(punto por punto)*
+- [ ] **React: Adding Interactivity** *(punto x punto)*
+
+- [ ] - [x] *Responding to events*
+  
+  - [ ] *State: A Component's Memory*
+  
+  - [ ] *Render and Commit*
+  
+  - [ ] *State as a Snapshot*
+  
+  - [ ] *Queueing a Series of State Updates*
+  
+  - [ ] *Updating Objects in State*
+  
+  - [ ] *Updating Arrays in State*
 
 - [ ] **Clonar Lab#7-1 Traffic Lights** *(estudiar com s'ha fet)*
 
 - [ ] **React JS App: router** *(re-read)*
+
+- [ ] **axios vs fetch** *(Buscar diferencias)*
+
+- [ ] **await / async**
+
+- [ ] **Practicar CRUD** *(micro-programación)*
 
 - [ ] **useEffect** *(picnic)*
 
@@ -18,17 +38,13 @@
 
 - [ ] **useContext** *(picnic)*
 
-- [ ] **useImmer** *(picnic)*
+- [ ] **useImmer** *(picnic)
 
 - [ ] **Lab React #1-01** *()*
 
 - [ ] **Lab React #3-03** *()*
 
-- [ ] **axios vs fetch** *(Buscar diferencias)*
 
-- [ ] **await / async**
-
-- [ ] **Practicar CRUD** *(micro-programación)*
 
 ## Others :bulb:
 
