@@ -4,9 +4,15 @@
 
 ## Homework :pencil:
 
-- [ ] **Adding Interactivity: Updating Arrays in State** *(acabar)*
+- [ ] ~~**Adding Interactivity: Updating Arrays in State** *(acabar)*~~
 
-- [ ] **React: Adding Interactivity** *(punto x punto)*
+- [ ] ~~**Inspiring sculptor sandbox** *(add edit button)*~~
+
+- [ ] ~~**AlbertProfe: API Rest**~~
+
+- [x] **Clonar Lab#7-1 Traffic Lights** *(estudiar com s'ha fet)*
+
+- [ ] ~~**React: Adding Interactivity** *(punto x punto)*~~
   
   - [x] *State: A Component's Memory*
   
@@ -20,27 +26,25 @@
   
   - [ ] *Updating Arrays in State*
 
-- [ ] **Clonar Lab#7-1 Traffic Lights** *(estudiar com s'ha fet)*
+- [x] **React JS App: router** *(re-read)*
 
-- [ ] **React JS App: router** *(re-read)*
+- [x] **axios vs fetch** *(Buscar diferencias)*
 
-- [ ] **axios vs fetch** *(Buscar diferencias)*
+- [ ] ~~**Practicar CRUD** *(micro-programación)*~~
 
-- [ ] **Practicar CRUD** *(micro-programación)*
+- [x] **useEffect** *(picnic)*
 
-- [ ] **useEffect** *(picnic)*
+- [ ] ~~**useMemo** *(picnic)*~~
 
-- [ ] **useMemo** *(picnic)*
+- [ ] ~~**useContext** *(picnic)*~~
 
-- [ ] **useContext** *(picnic)*
+- [ ] ~~**useImmer** *(picnic)*~~
 
-- [ ] **useImmer** *(picnic)
+- [ ] ~~**Lab React #1-01** *()*~~
 
-- [ ] **Lab React #1-01** *()*
+- [ ] ~~**Lab React #3-03** *()*~~
 
-- [ ] **Lab React #3-03** *()*
-
-- [ ] **await / async**
+- [ ] ~~**await / async**~~
 
 ## Others :bulb:
 
@@ -49,6 +53,6 @@
 + [ ] **The Programmer Dictionary**
 - [ ] **Tutorial Git**
 
-- [x] **Take notes**
+- [ ] **Take notes**
 
 - [x] **Modify plan if needed :smile:**
