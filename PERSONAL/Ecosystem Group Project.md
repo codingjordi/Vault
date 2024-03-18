@@ -9,5 +9,3 @@
 |                     | JUnit: v5.0        | UML: Mermaid                                    |                     |         |
 |                     | JavaFaker: v1.0.2  | Wireframe: draw.io  Mockup: Figma               |                     |         |
 |                     | H2: SQL DB         |                                                 |                     |         |
-
-
