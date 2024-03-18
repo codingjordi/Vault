@@ -24,6 +24,10 @@
 
 - [ ] **endpoint** *(what really is?)*
 
+- [ ] **Pasar apuntes a limpio** *(libreta negra + hojas)*
+
+- [x] **Grupo de WhatsApp trabajo de clase** *(crear + pasar .md del ecosystem)*
+
 ## Others :bulb:
 
 - [ ] **MOOC**
