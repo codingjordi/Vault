@@ -8,7 +8,7 @@
 
 - [ ] **React: Adding Interactivity** *(punto x punto)*
   
-  - [ ] *Updating Objects in State*
+  - [x] *Updating Objects in State*
   
   - [ ] *Updating Arrays in State*
 
@@ -27,6 +27,10 @@
 - [ ] **Pasar apuntes a limpio** *(libreta negra + hojas)*
 
 - [x] **Grupo de WhatsApp trabajo de clase** *(crear + pasar .md del ecosystem)*
+
+- [ ] **Apuntes React: Describing the UI** *(revisar apuntes)*
+
+- [ ] **Apuntes React: Adding Interactivity** *(revisar apuntes)*
 
 ## Others :bulb:
 
