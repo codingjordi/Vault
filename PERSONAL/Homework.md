@@ -2,7 +2,11 @@
 
 ## fetch() vs axios.get()
 
-Claro, aquí tienes ejemplos usando tanto `fetch` como `axios.get` con bloques `try` y `catch` para manejar errores:
+> :bulb: => Axios maneja automáticamente la conversión de datos JSON, tienes que llamar al método `.json()` en el objeto `response` para obtener los datos en formato JSON.
+
+
+
+Claro, aquí tienes ejemplos usando tanto `fetch` como `axios.get` con bloques `try` y `catch` para manejar errores: 
 
 ### Ejemplo con fetch y try/catch:
 
@@ -36,17 +40,48 @@ try {
 
 ### Diferencias y especificaciones:
 
-1. **Sintaxis**:
+1. **Interfaz**:
    
-   - Con `fetch`, se utiliza la palabra clave `await` dentro del bloque `try` para esperar la respuesta y convertirla en datos JSON.
-   - Con `axios.get`, también se utiliza `await` para esperar la respuesta, pero Axios maneja automáticamente la conversión de datos JSON, por lo que no necesitas hacerlo explícitamente.
+   - Con `fetch`, tienes que llamar al método `json()` en el objeto `Response` para obtener los datos en formato JSON.
+   - Con `axios.get`, los datos se encuentran directamente en la propiedad `data` del objeto `response`.
 
 2. **Manejo de errores**:
    
-   - Ambos ejemplos utilizan un bloque `try` y `catch` para manejar errores. Si la solicitud falla o la respuesta no es exitosa, el error se captura en el bloque `catch` y se puede manejar de manera adecuada.
+   - En ambos casos, se manejan los errores en el método `catch`, pero Axios tiende a proporcionar mensajes de error más descriptivos y estructurados, lo que puede ser útil para depurar.
 
-3. **Compatibilidad con async/await**:
+3. **Transformación de datos**:
    
-   - Ambos ejemplos utilizan la sintaxis de `async/await` para manejar promesas de manera más limpia y legible. Esto simplifica la escritura del código en comparación con el uso de `.then()` y `.catch()`.
+   - Axios realiza automáticamente la conversión de datos JSON, mientras que con `fetch` necesitas hacerlo manualmente llamando a `response.json()`.
 
-En resumen, tanto `fetch` como `axios.get` pueden ser utilizados con bloques `try` y `catch` para manejar errores de manera efectiva. La elección entre ellos depende de las preferencias personales del desarrollador y de las necesidades específicas del proyecto.
+4. **Compatibilidad**:
+   
+   - Fetch es parte del estándar moderno de JavaScript y es compatible con la mayoría de los navegadores modernos, pero puede requerir polyfills para versiones más antiguas.
+   - Axios se encarga automáticamente de la compatibilidad con navegadores más antiguos y proporciona una interfaz más intuitiva y fácil de usar.
+
+En general, la elección entre `fetch` y `axios` depende de las necesidades específicas de tu proyecto y de tus preferencias personales. `fetch` es una opción viable y moderna, mientras que `axios` proporciona una interfaz más intuitiva y fácil de usar, especialmente cuando se trabaja con múltiples tipos de solicitudes o configuraciones avanzadas.
+
+---
+
+## `<Card props={avatar}` /> vs `<Card>{children}</Card>`
+
+> :one: `<Card props={avatar}` => se pasa un objeto de propiedades (`props`)               directamente al componente `<Card>` utilizando el atributo `props`.
+
+
+
+> :two:`<Card>{children}</Card>` => se pasa el contenido dentro de las etiquetas      `<Card>` como hijos (`children`) al componente `<Card>`.
+
+
+
+1. `<Card props={avatar} />`
+2. `<Card>{children}</Card>`
+
+Hay una diferencia fundamental en cómo se pasan las propiedades (`props`) a `<Card>` y cómo se utilizan los elementos hijos (`children`).
+
+1. En el primer caso (`<Card props={avatar} />`), estás pasando las propiedades directamente al componente `<Card>` utilizando el atributo `props`. Aquí, `props` es un objeto que contiene una propiedad llamada `avatar`. Dentro del componente `<Card>`, puedes acceder a esta propiedad usando `props.avatar`.
+
+2. En el segundo caso (`<Card>{children}</Card>`), estás utilizando la técnica de "children" en React. En este caso, cualquier cosa que esté dentro de las etiquetas `<Card>` se pasará como un hijo (`children`) al componente `<Card>`. Por lo tanto, si utilizas `<Card>` como en el ejemplo, cualquier contenido que esté dentro de las etiquetas `<Card>` (como otros componentes, texto, elementos HTML, etc.) se pasará como `children` al componente `<Card>`. Dentro del componente `<Card>`, puedes acceder a este contenido utilizando `props.children`.
+
+Entonces, en resumen:
+
+- En el primer caso, estás pasando un objeto de propiedades (`props`) directamente al componente `<Card>` utilizando el atributo `props`.
+- En el segundo caso, estás pasando el contenido dentro de las etiquetas `<Card>` como hijos (`children`) al componente `<Card>`.
