@@ -10,33 +10,23 @@
   
   - [ ] *Updating Arrays in State*
 
-- [ ] **Practicar CRUD** *(micro-programación)*
-
 - [ ] **useMemo** *(picnic)*
 
 - [ ] **Lab React #1-01**
 
 - [ ] **Lab React #3-03**
 
-- [ ] **await / async**
+- [x] **await / async**
 
 - [ ] **endpoint** *(what really is?)*
 
 - [ ] **Pasar apuntes a limpio** *(libreta negra + hojas)*
 
-- [ ] **Apuntes React: Describing the UI** *(revisar apuntes)*
+- [x] **.get() vs .fetch()**
 
-- [ ] **Apuntes React: Adding Interactivity** *(revisar apuntes)*
+- [x] **`<Card props={prop}/>` vs `<Card>{children}</Card>`**
 
-- [ ] **{children} vs props**
-
-- [ ] **.get() vs .fetch()**
-
-- [ ] **`<Card props={prop}/>` vs `<Card>{children}</Card>`**
-
-- [ ] **Clonar trafficlights 1.4.2**
-
-- [ ] **ES6 mapping tools**
+- [x] **Clonar trafficlights 1.4.2**
 
 - [ ] **ES& mapping tools** *(picnic)*
   
@@ -55,5 +45,8 @@
 - [ ] **Tutorial Git**
 
 - [ ] **Take notes**
+  
+  - [ ] *Apuntes React: Describing the UI*
+  - [ ] *Apuntes React: Adding Interactivity*
 
 - [ ] **Modify plan if needed :smile:**
