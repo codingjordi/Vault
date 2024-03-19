@@ -3,6 +3,8 @@
 ## fetch() vs axios.get()
 
 > :bulb: => Axios maneja automáticamente la conversión de datos JSON, tienes que llamar al método `.json()` en el objeto `response` para obtener los datos en formato JSON.
+> 
+> 
 
 
 
@@ -65,10 +67,14 @@ En general, la elección entre `fetch` y `axios` depende de las necesidades espe
 ## `<Card props={avatar}` /> vs `<Card>{children}</Card>`
 
 > :one: `<Card props={avatar}` => se pasa un objeto de propiedades (`props`)               directamente al componente `<Card>` utilizando el atributo `props`.
+> 
+> 
 
 
 
 > :two:`<Card>{children}</Card>` => se pasa el contenido dentro de las etiquetas      `<Card>` como hijos (`children`) al componente `<Card>`.
+> 
+> 
 
 
 
@@ -85,3 +91,31 @@ Entonces, en resumen:
 
 - En el primer caso, estás pasando un objeto de propiedades (`props`) directamente al componente `<Card>` utilizando el atributo `props`.
 - En el segundo caso, estás pasando el contenido dentro de las etiquetas `<Card>` como hijos (`children`) al componente `<Card>`.
+
+---
+
+## `await`  vs  `async`
+
+> `async` se utiliza para declarar funciones asíncronas, lo que permite el uso de `await` dentro de ellas para esperar la resolución de promesas de manera síncrona
+> 
+> 
+
+
+
+`async` y `await` son dos palabras clave en JavaScript que se utilizan en conjunto para trabajar con funciones asíncronas y promesas. Aquí está la diferencia entre ellos:
+
+1. **`async`**:
+   
+   - `async` es una palabra clave que se utiliza antes de la declaración de una función para indicar que esa función será asíncrona.
+   - Cuando una función se declara como `async`, esto significa que la función siempre devuelve una promesa. Si la función devuelve un valor, la promesa se resolverá con ese valor. Si la función lanza una excepción, la promesa se rechazará con esa excepción.
+   - Las funciones `async` permiten utilizar la palabra clave `await` dentro de ellas para esperar la resolución de una promesa sin bloquear la ejecución del hilo principal de JavaScript.
+
+2. **`await`**:
+   
+   - `await` es una palabra clave que solo se puede utilizar dentro de una función declarada como `async`.
+   - `await` se utiliza para esperar la resolución de una promesa. Cuando se encuentra la palabra clave `await` dentro de una función `async`, la ejecución de esa función se detiene temporalmente hasta que la promesa se resuelva (ya sea con un valor o con un error).
+   - La expresión que sigue a `await` debe ser una promesa. Si la promesa se resuelve correctamente, `await` devuelve el valor resuelto. Si la promesa se rechaza, `await` lanzará una excepción.
+
+En resumen, `async` se utiliza para declarar funciones asíncronas, lo que permite el uso de `await` dentro de ellas para esperar la resolución de promesas de manera síncrona. Esto facilita la escritura de código asíncrono de manera más limpia y legible, evitando el "callback hell" y simplificando la gestión de errores.
+
+
