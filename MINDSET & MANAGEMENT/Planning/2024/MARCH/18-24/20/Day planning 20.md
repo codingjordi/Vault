@@ -6,24 +6,24 @@
 
 - [ ] **Inspiring sculptor sandbox** *(add edit button)*
 
-- [ ] **React: Adding Interactivity** *(punto x punto)*
+- [x] **React: Adding Interactivity** *(punto x punto)*
   
   - [ ] *Updating Arrays in State*
 
 - [ ] **useMemo** *(picnic)*
 
-- [ ] **Lab React #1-01**
+- [ ] **Lab React #1-01** *(API Rest Axios)*
 
-- [ ] **Lab React #3-03**
+- [ ] **Lab React #3-03** *(API REST Mono)*
 
-- [ ] **endpoint** *(what really is?)*
+- [x] **endpoint** *(what really is?)*
 
 - [ ] **Pasar apuntes a limpio** *(libreta negra + hojas)*
 
-- [ ] **ES& mapping tools** *(picnic)*
+- [ ] **ES6 mapping tools** *(picnic)*
   
   - [ ] *.equals()*
-  - [ ] *.find()*
+  - [x] *.find()*
   - [ ] .sort()
   - [x] .slice()
 
