@@ -3,10 +3,6 @@
 ## fetch() vs axios.get()
 
 > :bulb: => Axios maneja automáticamente la conversión de datos JSON, tienes que llamar al método `.json()` en el objeto `response` para obtener los datos en formato JSON.
-> 
-> 
-
-
 
 Claro, aquí tienes ejemplos usando tanto `fetch` como `axios.get` con bloques `try` y `catch` para manejar errores: 
 
@@ -24,8 +20,6 @@ try {
   console.error('Error al obtener los datos:', error);
 }
 ```
-
-
 
 ### Ejemplo con axios.get y try/catch:
 
@@ -67,16 +61,8 @@ En general, la elección entre `fetch` y `axios` depende de las necesidades espe
 ## `<Card props={avatar}` /> vs `<Card>{children}</Card>`
 
 > :one: `<Card props={avatar}` => se pasa un objeto de propiedades (`props`)               directamente al componente `<Card>` utilizando el atributo `props`.
-> 
-> 
-
-
 
 > :two:`<Card>{children}</Card>` => se pasa el contenido dentro de las etiquetas      `<Card>` como hijos (`children`) al componente `<Card>`.
-> 
-> 
-
-
 
 1. `<Card props={avatar} />`
 2. `<Card>{children}</Card>`
@@ -97,10 +83,6 @@ Entonces, en resumen:
 ## `await`  vs  `async`
 
 > `async` se utiliza para declarar funciones asíncronas, lo que permite el uso de `await` dentro de ellas para esperar la resolución de promesas de manera síncrona
-> 
-> 
-
-
 
 `async` y `await` son dos palabras clave en JavaScript que se utilizan en conjunto para trabajar con funciones asíncronas y promesas. Aquí está la diferencia entre ellos:
 
@@ -118,4 +100,32 @@ Entonces, en resumen:
 
 En resumen, `async` se utiliza para declarar funciones asíncronas, lo que permite el uso de `await` dentro de ellas para esperar la resolución de promesas de manera síncrona. Esto facilita la escritura de código asíncrono de manera más limpia y legible, evitando el "callback hell" y simplificando la gestión de errores.
 
+---
 
+# endpoint
+
+> :bulb: => URL específica en el servidor al cual tu aplicación hace solicitudes HTTP para obtener, enviar, actualizar o eliminar datos.
+
+En el contexto de React y el desarrollo de aplicaciones que consumen APIs (Interfaces de Programación de Aplicaciones), un "endpoint" se refiere a una URL específica en el servidor al cual tu aplicación hace solicitudes HTTP para obtener, enviar, actualizar o eliminar datos.
+
+Cuando trabajas con una API en React, los endpoints son esenciales para interactuar con el servidor y acceder a los datos que necesitas para tu aplicación. Estos endpoints están definidos por el servidor y representan diferentes recursos disponibles, cada uno con su propia URL única y funcionalidad específica.
+
+Por ejemplo, supongamos que estás construyendo una aplicación de gestión de tareas. Podrías tener los siguientes endpoints:
+
+- `/api/tasks`: Este endpoint podría usarse para obtener la lista de tareas, agregar una nueva tarea, o eliminar tareas existentes.
+- `/api/tasks/:id`: Este endpoint permitiría acceder a una tarea específica por su ID, actualizar una tarea existente o eliminarla.
+
+En React, utilizarías herramientas como `fetch`, `axios` u otros métodos para realizar solicitudes HTTP a estos endpoints. Por ejemplo:
+
+```jsx
+fetch('/api/tasks')
+  .then(response => response.json())
+  .then(data => {
+    // Manipular los datos obtenidos
+  })
+  .catch(error => {
+    // Manejar errores
+  });
+```
+
+En resumen, un "endpoint" en React (y en cualquier desarrollo de aplicaciones web) es simplemente una URL específica en el servidor que proporciona acceso a un recurso o funcionalidad específica a través de la API. Utilizas estos endpoints para comunicarte con el servidor y acceder a los datos necesarios para tu aplicación.
