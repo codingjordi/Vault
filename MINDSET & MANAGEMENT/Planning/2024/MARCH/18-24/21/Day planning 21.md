@@ -25,6 +25,8 @@
 
 - [ ] **DB: n:m** *(WTF is this?)*
 
+- [ ] **HTML Events Attributes** *([HTML Event Attributes](https://www.w3schools.com/tags/ref_eventattributes.asp))*
+
 ## Others :bulb:
 
 - [ ] **MOOC**
