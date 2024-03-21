@@ -23,6 +23,8 @@
   - [ ] *.equals()*
   - [ ] *.sort()*
 
+- [ ] **DB: n:m** *(WTF is this?)*
+
 ## Others :bulb:
 
 - [ ] **MOOC**
