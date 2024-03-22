@@ -27,6 +27,8 @@
 
 - [ ] **HTML Events Attributes** *([HTML Event Attributes](https://www.w3schools.com/tags/ref_eventattributes.asp))*
 
+- [ ] **React JS ES6: destructuring** *([Albert Profe destructuring](https://albertprofe.dev/reactjs/reactjs-es6-destructuring.html))*
+
 ## Others :bulb:
 
 - [ ] **MOOC**
