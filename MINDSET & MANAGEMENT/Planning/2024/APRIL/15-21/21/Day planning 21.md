@@ -30,6 +30,20 @@
 
 - [ ] **Descargar .md useReducer examples** *(AP.dev)*
 
+- [ ] **Rellenar perfil developer de LinkedIn**
+
+- [ ] **React: Managing State** *(picnic)*
+
+- [ ] **React: Managing State** *(punto x punto)*
+  
+  - [ ] *Reacting to Input with State*
+  - [ ] *Choosing the State Structure*
+  - [ ] *Sharing Stat Between Components*
+  - [ ] *Preserving and Resetting State*
+  - [ ] *Extracting State Logic into a Reducer*
+  - [ ] *Passing Data Deeply with Context*
+  - [ ] *Scaling Up with Reducer and Context*
+
 ## Others :bulb:
 
 - [ ] ###### **MOOC**
@@ -39,10 +53,5 @@
 - [ ] **The Programmer Dictionary**
 
 - [ ] **Tutorial Git**
-
-- [ ] **Take notes**
-  
-  - [ ] *Apuntes React: Describing the UI*
-  - [ ] *Apuntes React: Adding Interactivity*
 
 - [ ] **Modify plan if needed :smile:**
