@@ -26,11 +26,11 @@
 
 - [ ] **useState vs useReducer** *(why and when?)*
 
-- [ ] **Crear cuenta en MongoDB**
+- [x] **Crear cuenta en MongoDB**
 
 - [ ] **Descargar .md useReducer examples** *(AP.dev)*
 
-- [ ] **Rellenar perfil developer de LinkedIn**
+- [x] **Rellenar perfil developer de LinkedIn**
 
 - [ ] **React: Managing State** *(picnic)*
 
