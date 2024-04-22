@@ -364,4 +364,174 @@ You need to give each array item a `key` — a string or a number that uniquely 
 
 Keys tell React which array item each component corresponds to, so that it can match them up later. This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted. A well-chosen `key` helps React infer what exactly has happened, and make the correct updates to the DOM tree.
 
-## 
+## ES6 methods
+
+1. **Método `.sort()`**:
+   El método `.sort()` se utiliza para ordenar los elementos de un array y modificar el array en el lugar. Aquí hay un ejemplo de cómo usarlo en React con el hook `useState()`:
+
+```jsx
+import React, { useState } from 'react';
+
+function SortExample() {
+  const [numbers, setNumbers] = useState([3, 1, 2, 5, 4]);
+
+  const sortNumbers = () => {
+    const sorted = [...numbers]; // Crear una copia del array original para no mutarlo directamente
+    sorted.sort((a, b) => a - b); // Ordenar los números de manera ascendente
+    setNumbers(sorted); // Actualizar el estado con el array ordenado
+  };
+
+  return (
+    <div>
+      <button onClick={sortNumbers}>Ordenar números</button>
+      <ul>
+        {numbers.map((number, index) => (
+          <li key={index}>{number}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default SortExample;
+```
+
+En este ejemplo, tenemos un componente funcional `SortExample` que muestra una lista de números y un botón para ordenarlos. Cuando se hace clic en el botón, se llama a la función `sortNumbers()` que copia el array original, lo ordena y actualiza el estado con el nuevo array ordenado.
+
+2. **Método `.equals()` (concepto, no parte de JavaScript o React)**:
+   El método `.equals()` no es un método estándar en JavaScript o React. Sin embargo, en JavaScript, puedes usar el operador `===` para comparar dos valores y verificar si son iguales. Aquí hay un ejemplo que compara dos cadenas:
+
+```jsx
+import React from 'react';
+
+function EqualsExample() {
+  const string1 = 'Hello';
+  const string2 = 'Hello';
+
+  const areEqual = string1 === string2;
+
+  return (
+    <div>
+      <p>{areEqual ? 'Las cadenas son iguales' : 'Las cadenas son diferentes'}</p>
+    </div>
+  );
+}
+
+export default EqualsExample;
+```
+
+En este ejemplo, `areEqual` contendrá `true` si las dos cadenas son iguales, y `false` si son diferentes. Sin embargo, es importante destacar que en JavaScript, los objetos y arrays se comparan por referencia, no por valor. Por lo tanto, para comparar objetos o arrays en JavaScript, tendrías que implementar tu propia función de comparación personalizada.
+
+
+
+### Buen ejemplo de uso de `useReducer`:
+
+Imagina que estás desarrollando una aplicación de carrito de compras en React. En esta aplicación, el estado del carrito puede ser bastante complejo, ya que puede incluir múltiples productos, cada uno con su cantidad, precio, descuentos aplicados, etc. Además, necesitas manejar acciones como agregar un producto al carrito, eliminar un producto, actualizar la cantidad, aplicar descuentos, etc.
+
+```jsx
+import React, { useReducer } from 'react';
+
+const initialState = {
+  products: [],
+  total: 0,
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'ADD_PRODUCT':
+      return {
+        ...state,
+        products: [...state.products, action.payload],
+        total: state.total + action.payload.price,
+      };
+    case 'REMOVE_PRODUCT':
+      // Lógica para eliminar un producto del carrito
+      return state;
+    // Otros casos para manejar otras acciones
+    default:
+      throw new Error('Acción no reconocida');
+  }
+}
+
+function ShoppingCart() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleAddToCart = (product) => {
+    dispatch({ type: 'ADD_PRODUCT', payload: product });
+  };
+
+  return (
+    <div>
+      <h2>Carrito de Compras</h2>
+      <ul>
+        {state.products.map((product, index) => (
+          <li key={index}>{product.name}: ${product.price}</li>
+        ))}
+      </ul>
+      <p>Total: ${state.total}</p>
+      {/* Botón para agregar un producto al carrito */}
+      <button onClick={() => handleAddToCart({ name: 'Producto Ejemplo', price: 10 })}>
+        Agregar Producto
+      </button>
+    </div>
+  );
+}
+
+export default ShoppingCart;
+```
+
+**Por qué es un buen ejemplo de `useReducer`:**
+
+- El estado del carrito es complejo y está compuesto por múltiples propiedades.
+- Se manejan múltiples acciones como agregar productos, eliminar productos, actualizar el total, etc.
+- `useReducer` facilita la gestión del estado en este escenario complejo y ofrece una estructura clara y mantenible.
+
+### Mal ejemplo de uso de `useReducer`:
+
+Supongamos que estás desarrollando una aplicación de formulario simple en React que solo necesita manejar el estado de algunos campos de entrada.
+
+```jsx
+import React, { useReducer } from 'react';
+
+const initialState = {
+  username: '',
+  email: '',
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'SET_USERNAME':
+      return { ...state, username: action.payload };
+    case 'SET_EMAIL':
+      return { ...state, email: action.payload };
+    default:
+      return state;
+  }
+}
+
+function SimpleForm() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    dispatch({ type: `SET_${name.toUpperCase()}`, payload: value });
+  };
+
+  return (
+    <div>
+      <input type="text" name="username" value={state.username} onChange={handleInputChange} />
+      <input type="email" name="email" value={state.email} onChange={handleInputChange} />
+    </div>
+  );
+}
+
+export default SimpleForm;
+```
+
+**Por qué es un mal ejemplo de `useReducer`:**
+
+- El estado del formulario es simple y se compone de solo unos pocos campos de entrada.
+- Solo hay unas pocas acciones que actualizan el estado, sin lógica adicional.
+- En este caso, `useState` sería más apropiado y proporcionaría una solución más simple y legible para manejar el estado del formulario.
+
+En resumen, `useReducer` es útil cuando se enfrenta a un estado complejo con múltiples acciones y lógica de actualización, pero podría ser excesivo y menos claro para casos simples donde `useState` es más adecuado.
