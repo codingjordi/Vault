@@ -18,11 +18,9 @@
 
 - [ ] **Hacer carta de motivación**
 
-- [ ] **useState vs useReducer** *(why and when?)*
+- [x] **useState vs useReducer** *(why and when?)*
 
 - [ ] **Descargar .md useReducer examples** *(AP.dev)*
-  
-  
 
 - [ ] **React: Managing State** *(picnic)*
 
@@ -35,6 +33,18 @@
   - [ ] *Extracting State Logic into a Reducer*
   - [ ] *Passing Data Deeply with Context*
   - [ ] *Scaling Up with Reducer and Context*
+
+- [x] **Buscar ejemplo relacion entre 2 entidades que no necesitan una tabla auxiliar**
+
+- [ ] **Java Patterns** *(AP.dev)*
+
+- [ ] **Spring Boot: Data & DB** *(AP.dev)*
+
+- [ ] **Spring Boot: JPA Mappings** *(AP.dev)*
+
+- [ ] **MongoDB** *(video/picnic)*
+
+- [ ] **Fer llista cosas a millorar com a programador/ficar a CV**
 
 ## Others :bulb:
 
