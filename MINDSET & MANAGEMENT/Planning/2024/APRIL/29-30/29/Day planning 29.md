@@ -32,11 +32,13 @@
   6. *Passing Data Deeply with Context*
   7. *Scaling Up with Reducer and Context*
 
-- [ ] **Java Patterns** *(AP.dev)*
+- [x] **Java Patterns** *(AP.dev)*
 
-- [ ] **Spring Boot: Data & DB** *(AP.dev)*
+- [x] **Spring Boot: Data & DB** *(AP.dev)*
 
-- [ ] **Spring Boot: JPA Mappings** *(AP.dev)*
+- [x] **SQL vs NoSQL** *(What, when and why)*
+
+- [x] **Spring Boot: JPA Mappings** *(AP.dev)*
 
 - [ ] **MongoDB** *(video/picnic)*
 
@@ -45,8 +47,6 @@
 - [ ] **Fer llista cosas a millorar com a programador/ficar a CV**
 
 - [ ] **Fer planning setmana**
-
-- [ ] 
 
 ## Others :bulb:
 
