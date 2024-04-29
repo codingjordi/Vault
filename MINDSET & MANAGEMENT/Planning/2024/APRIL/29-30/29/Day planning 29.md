@@ -24,13 +24,19 @@
 
 - [ ] **React: Managing State** *(punto x punto)*
   
-  1. *Reacting to Input with State*
-  2. *Choosing the State Structure*
-  3. *Sharing Stat Between Components*
-  4. *Preserving and Resetting State*
-  5. *Extracting State Logic into a Reducer*
-  6. *Passing Data Deeply with Context*
-  7. *Scaling Up with Reducer and Context*
+  - [ ] *Reacting to Input with State*
+  
+  - [ ] *Choosing the State Structure*
+  
+  - [ ] *Sharing Stat Between Components*
+  
+  - [ ] *Preserving and Resetting State*
+  
+  - [ ] *Extracting State Logic into a Reducer*
+  
+  - [ ] *Passing Data Deeply with Context*
+  
+  - [ ] *Scaling Up with Reducer and Context*
 
 - [x] **Java Patterns** *(AP.dev)*
 
@@ -42,17 +48,15 @@
 
 - [ ] **MongoDB** *(video/picnic)*
 
-- [ ] **Rellenar versiones Developement Tools**
+- [x] **Rellenar versiones Developement Tools**
 
 - [ ] **Fer llista cosas a millorar com a programador/ficar a CV**
 
-- [ ] **Fer planning setmana**
+- [x] **Fer planning setmana**
 
 ## Others :bulb:
 
 - [ ] ###### **MOOC**
-
-- [ ] **Kridly's website**
 
 - [ ] **The Programmer Dictionary**
 
