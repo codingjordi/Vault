@@ -1,3 +1,5 @@
-- [ ] Que es exactament una prop? es un objecte o es un state que es pasa com a parametre?
-- [ ] Ubiquitos Language se refiere a el concepto de ser riguroso en como nos comunicamos, or it is actually un lenguaje/reglas?
+- [x] Que es exactament una prop? es un objecte o es un state que es pasa com a parametre?
+- [x] Ubiquitos Language se refiere a el concepto de ser riguroso en como nos comunicamos, or it is actually un lenguaje/reglas?
 - [ ] MOOC Object equality and lists (part 5)
+- [ ] 
+- [ ] 'detached HEAD' ???![](/home/jordi/.var/app/com.github.marktext.marktext/config/marktext/images/2024-05-08-16-17-36-image.png)
