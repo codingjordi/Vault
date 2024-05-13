@@ -8,11 +8,15 @@
   
   - [ ] *Updating Arrays in State*
 
-- [x] **React: Managing State** *(picnic)*
+- [x] **React: Managing State** *(picnic)* (11-05)
+
+- [x] **Semantic HTML vs Non-semantic HTML**
+
+- [x] **Semantic UI** *(Segment vs Container)*
 
 - [ ] **React: Managing State** *(punto x punto)*
   
-  - [x] *Reacting to Input with State*
+  - [x] *Reacting to Input with State* (11-05)
   
   - [ ] *Choosing the State Structure*
   
@@ -28,6 +32,8 @@
 
 - [ ] **Fer llista cosas a millorar com a programador/ficar a CV**
 
+- [x] **Enviar mail a Cibernarium** *(demanar .pdf itinerari React)*
+
 # Others :bulb:
 
 - [ ] **MOOC**
@@ -36,8 +42,6 @@
 
 - [ ] **Tutorial Git**
 
-- [x] **Dibujar arquitectura proyeto React trafficLights**
-
 - [ ] **Modify plan if needed :smile:**
 
 - [ ] **Lab React #1-01** *(API Rest Axios)*
@@ -45,3 +49,27 @@
 - [ ] **Lab React #3-03** *(API REST Mono)*
 
 - [ ] **Lab#SB00-6: Rest & MongoDB**
+
+- [ ] **SCRUM** *(punto x punto)*
+  
+  - [x] *SCRUM Agile Methodology*
+  
+  - [ ] *Agile Manifesto & Values*
+  
+  - [ ] *SCRUM Guide*
+  
+  - [ ] Week 1: Meetings, Impediments and Iterations **
+  - [ ] Week 2: User stories, Tasks and Habits **
+  - [ ] Week 3: Delivering Value & Communication
+  - [ ] Week 4: ScrumMaster, how it works 
+  - [ ] Week 5: Mindset, the key to everything **
+  - [ ] Week 6: Product Owner, how it works **
+  - [ ] Week 7: Managing Time & Mind **
+  - [ ] Week 8: Team & the Specialist
+  - [ ] Week 9: Albertus’ Dilemma **
+  - [ ] Week 10: Before SCRUM 
+  - [ ] Week 11: Team Dynamics
+  - [ ] Week 12: Emotions and Thoughts
+  - [ ] Week 13: Decision Making and Intuition
+  - [ ] Week 14: Beyond SCRUM
+  - [ ] Week 15: Balances, atmosphere and tools
