@@ -6,7 +6,7 @@ export default function Card({
   handleSetPrevStep,
   handleSetNextStep,
   displayPrev,
-  displayNext
+  displayNext,
 }: {
   title: string;
   description: string;
