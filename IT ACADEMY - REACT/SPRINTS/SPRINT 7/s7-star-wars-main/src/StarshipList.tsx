@@ -31,12 +31,11 @@ export default function StarshipList() {
     loadFetchedShips();
   }, [currentPage]);
 
-  if (!starships.results.length) {
-    return <div>Loading...</div>;
-  }
+  
 
   return (
     <div className="flex flex-col justify-center items-center w-full gap-8 p-4">
+      {(!starships.results.length) && <div>Loading...</div>}
       {starships.results.map((starship: Starship) => (
         <StarshipCard key={starship.name} starship={starship} />
       ))}
