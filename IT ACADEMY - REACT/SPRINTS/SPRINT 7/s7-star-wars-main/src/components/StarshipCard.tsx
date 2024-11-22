@@ -16,7 +16,7 @@ export default function StarshipCard({ starship }) {
         </div>
         <button
           onClick={toggleExpand}
-          className="text-xs text-blue-400 underline focus:outline-none"
+          className="text-xs text-blue-400 underline focus:outline-none transition-all duration-300 cursor-pointer hover:text-blue hover:drop-shadow-[0_0_7px_rgba(255,255,255,0.7)] hover:font-medium"
         >
           {isExpanded ? 'View less' : 'View more'}
         </button>
