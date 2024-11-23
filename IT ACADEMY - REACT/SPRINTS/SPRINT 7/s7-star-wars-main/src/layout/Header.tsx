@@ -1,15 +1,20 @@
 import React from 'react'
 import starWarsLogo from '../assets/star-wars-logo.png';
-import { NavLink } from 'react-router-dom';
+import starWarsLogoMobile from '../assets/star-wars-logo-mobile.png';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
 
 export default function Header() {
 
   const { user, logout } = useAuth();
+  const navigate = useNavigate()
 
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
+    navigate('/home', {
+      replace: true
+    })
   }
 
   return (
@@ -53,18 +58,19 @@ export default function Header() {
         </div>
 
         <div className="flex justify-center">
-          <img src={starWarsLogo} width={190} aria-label="Star Wars Logo" />
+          <img src={starWarsLogoMobile} aria-label='Star Wars Logo' className='md:hidden' />
+          <img src={starWarsLogo} aria-label="Star Wars Logo" className='hidden md:block' />
         </div>
 
 
         <div className="flex justify-end h-fit">
           {user !== undefined ?
-            <div className="flex">
-              <p className='px-4'>Howdy, {user.displayName !== null ? user.displayName : 'fella'}!</p>
+            <div className="flex items-center">  
+              <img className='rounded-full' src={user.displayName !== null ? user.photoURL : '../../src/assets/default-avatar.jpg'} height={50} width={50} alt="" />
+              <p className='px-4'>Howdy, {user.displayName !== null ? user.displayName.split(' ')[0] : 'fella'}!</p>
               <button
-                className="px-4 text-white cursor-pointer transition-all duration-300 relative drop-shadow-[0_0_7px_rgba(255,255,255,0.7)] 
-             hover:drop-shadow-[0_0_20px_rgba(255,0,0,0.8)] hover:text-red-500 
-             hover:ring-2 hover:ring-red-500 hover:animate-pulse"
+                className="px-4 text-white cursor-pointer transition-all duration-300 relative drop-shadow-[0_0_7px_rgba(255,255,255,0.7)] border rounded 
+                           hover:drop-shadow-[0_0_20px_rgba(255,0,0,0.8)] hover:border-red-600 hover:text-red-500 hover:ring-1 hover:ring-red-500 hover:animate-pulse"
                 onClick={() => handleLogout()}
               >
                 Log Out
@@ -72,7 +78,7 @@ export default function Header() {
             </div>
             :
             <ul className="flex divide-x-2">
-              <NavLink to='/log-in'>
+              <NavLink to='/login'>
                 <li className="px-4 text-white transition-all duration-300 cursor-pointer hover:text-white hover:drop-shadow-[0_0_7px_rgba(255,255,255,0.7)] hover:font-medium">LOG IN</li>
               </NavLink>
               <NavLink to='/sign-up'>

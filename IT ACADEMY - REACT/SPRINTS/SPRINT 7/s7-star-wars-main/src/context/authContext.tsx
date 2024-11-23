@@ -56,7 +56,8 @@ export function AuthProvider({ children }) {
             login,
             loginWithGoogle,
             logout,
-            user
+            user,
+            setUser
         }} >
             {children}
         </AuthContext.Provider>

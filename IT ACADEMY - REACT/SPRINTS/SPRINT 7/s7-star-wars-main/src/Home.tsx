@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <div className="star-wars-intro">
-        <p className="intro-text italic">
+        <p className="intro-text">
           A few days ago, during...
         </p>
         <h2 className="main-logo">
